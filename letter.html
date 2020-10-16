@@ -32,7 +32,14 @@
         //函式區
         function changeStepBack(){
             let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
-            stepTitleSelect.innerText =stepTitle[nowStepNum-1];
+            let nowRightNum =  nowStepNum+1;
+            if(0<=nowStepNum<=stepTitle.length){
+                document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
+                stepTitleSelect.innerText =stepTitle[nowRightNum];
+                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'block';
+                
+            }
+            
         }
         function changeStepNext(){
             let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
