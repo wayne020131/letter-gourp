@@ -461,18 +461,42 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 .popular_area .area_pic {
   -webkit-box-flex: 40%;
       -ms-flex: 40%;
           flex: 40%;
+  padding: 0 20px;
 }
 
 .popular_area .area_info {
   -webkit-box-flex: 60%;
       -ms-flex: 60%;
           flex: 60%;
+}
+
+.popular_area .hot {
+  background-color: #F85619;
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  left: -85px;
+  top: -85px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 1;
+}
+
+.popular_area .hot p {
+  font-size: 16px;
+  position: absolute;
+  right: 5px;
+  bottom: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .other_popular_area {
