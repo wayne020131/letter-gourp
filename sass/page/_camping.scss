@@ -1,0 +1,71 @@
+.spot{
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    padding:20px;
+}
+.map{
+    height: 500px;
+    background: #333;
+    display: inline-block;
+    max-width: 900px;
+    width: 100%;
+    // border: 1px solid red;
+}
+#weatherbox{
+    // display: inline-block;
+    // vertical-align: top;
+    border: 1px solid blue;
+}
+.search_area{
+    border: 1px solid green;
+}
+label{
+    display: inline-block;
+    width: 70px;
+}
+select{
+    width: 120px;
+}
+
+.infos{
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid red;
+}
+.temp{
+    border: 1px solid blue;
+    display: inline-block;
+    padding: .5rem 0;
+    width: 45%;
+}
+.pre{
+    border: 1px solid green;
+    display: inline-block;
+    padding: 1rem 0 0 0;
+    vertical-align: top;
+}
+.RH{
+    margin-top: 10px;
+}
+.weatherweek{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    border: 1px solid red;
+}
+.NowT{
+    /* display: inline-block; */
+}
+.NowT>p{
+    display: inline-block;
+    font-size: 3rem;
+    border: 1px solid green;
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+.weatherweek p{
+    padding: .5rem;
+}

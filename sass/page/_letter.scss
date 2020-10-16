@@ -1,0 +1,40 @@
+.wrap{
+    .stepBreadcrumbs{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 3%;
+        .cardStep{
+            background-color: $yellowColor1;
+            padding: 1.2rem;
+            border-radius: 50%;
+            p{
+                text-align: center;
+            }
+        }        
+    }
+    .postcard_content{
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        .postcard{
+            flex: 0 1 65%;
+            border: 1px solid red;
+            margin-right: 15px;
+           
+        }
+        .rightPostcard{
+            flex: 25%;
+            border: 1px solid blue;
+            p{
+                text-align: center;
+                margin-top: 5%;
+                background-color: $greenColor3;
+                line-height: 60px;
+            }
+        }
+    }
+
+
+}
