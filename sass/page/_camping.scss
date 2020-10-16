@@ -160,6 +160,40 @@
         margin: 20px auto 10px;
     }
 }
+//------------------------------------------------------------
+//camping2
+.location{
+    .collect{
+        display: flex;
+        .collect_btn{
+            width: 100px;
+            text-align: right;
+        }
+    }
+    .big_pic{
+        width: 100%;
+    }
+}
+.introduction{
+    display: flex; 
+    .text{
+        flex: 60%;
+    }
+    .more_pic{
+        display: flex;
+        .small_pic{
+            width: 60px;
+            border-radius: 5px;
+            border: 1px solid red;
+            align-self: start;
+            margin: 3px;
+        }
+    }
+}
+.small_pic{
+    width: 60px;
+}
+
 //rwd
 @media screen and (min-width: 768px) and (max-width: 991px){
     .search_area{

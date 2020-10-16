@@ -545,6 +545,53 @@ a {
   margin: 20px auto 10px;
 }
 
+.location .collect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.location .collect .collect_btn {
+  width: 100px;
+  text-align: right;
+}
+
+.location .big_pic {
+  width: 100%;
+}
+
+.introduction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.introduction .text {
+  -webkit-box-flex: 60%;
+      -ms-flex: 60%;
+          flex: 60%;
+}
+
+.introduction .more_pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.introduction .more_pic .small_pic {
+  width: 60px;
+  border-radius: 5px;
+  border: 1px solid red;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  margin: 3px;
+}
+
+.small_pic {
+  width: 60px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .search_area p label {
     width: calc(100%-200px);
