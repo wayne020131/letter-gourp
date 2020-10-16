@@ -1,0 +1,38 @@
+
+.footer_bgc{
+    background-color: $greenColor4;
+}
+.footerarrange{
+    display: flex;
+}
+.footright{
+    // border: 1px solid red;
+    flex: 35%;
+    padding-top:25px ;
+}
+.footercenter{
+    // border: 1px solid red;
+    flex: 30%;
+}
+.footercenter img{
+    display: block;
+    margin: 0 auto;
+}
+.footerright{
+    // border: 1px solid red;
+    flex: 35%;
+    padding-top:25px;
+}
+.footer_icon img{
+    width: 40px;
+    margin: 0 10px;
+}
+.copyright{
+    text-align: center;
+}
+
+@media screen and (max-width: 767px){
+    .footright,.footercenter{
+        display: none;
+        }
+    }

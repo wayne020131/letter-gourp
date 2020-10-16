@@ -1,0 +1,152 @@
+header{
+    background-color: $greenColor4;
+    height: 70px;
+    margin-bottom: 60px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+}
+.forphone>button{
+    display: none;
+}
+.forphone>a{
+    display: none;
+}
+.wrap{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.nav_list{
+    /* border: 1px solid orange; */
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    
+}
+
+ul{
+    list-style-type: none;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid gray; */
+}
+
+li{
+    display: inline-block;
+    margin: 0 45px;
+    /* border: 1px solid red; */
+    height: 60px;
+    line-height: 60px;
+}
+li:nth-child(3){
+    margin-right: 110px;
+}
+li:nth-child(4){
+    margin-left: 110px;
+}
+a{
+    text-decoration: none;
+    font-size: 1rem;
+    
+}
+.nav_logo img.desk{
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+.nav_logo img.phone{
+    display: none;
+}
+.nav_logo {
+    display: inline-block;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+@media screen and (min-width: 1200px){
+    .wrap{
+        width: 1140px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px){
+.wrap{
+    width: 960px;
+}
+li {
+    margin: 0 30px;
+    height: 60px;
+    line-height: 60px;
+}
+li:nth-child(3){
+    margin-right: 100px;
+}
+li:nth-child(4){
+    margin-left: 100px;
+}
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+.wrap{
+    width: 720px;
+}
+li {
+    margin: 0 12px;
+    height: 60px;
+    line-height: 60px;
+}
+li:nth-child(3){
+    margin-right: 70px;
+}
+li:nth-child(4){
+    margin-left: 70px;
+}
+}
+@media screen and (min-width: 768px){
+.nav_list{
+    display:inline-block !important;
+}
+
+}
+
+@media screen and (max-width: 767px){
+.wrap{
+    width: 540px;
+    }
+.nav_list{
+    display: none;
+    width: 100%;
+    position: relative;
+    top: 55px;
+    margin: 0 auto 80px;
+    }
+
+.forphone>button{
+    display: block;
+    position: absolute;
+}
+.forphone>a{
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+}
+.nav_logo img.desk {
+    display: none;
+}
+.nav_logo img.phone {
+    display: inline-block;
+}
+
+.nav_logo {
+    top: 0px;
+    }
+}
+@media screen and (max-width: 576px){
+.wrap{
+    width: 100%;
+    }
+}
