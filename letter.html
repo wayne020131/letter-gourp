@@ -7,6 +7,46 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./hamburgers-master/dist/hamburgers.css">
 </head>
+<script>
+    function doFirst(){
+        //建立變數
+        let stepTitleSelect = document.getElementById('stepTitleName');
+        let previousStep = document.getElementById('previousStep');
+        let nextStep = document.getElementById('nextStep');
+        let stepTitle = stepTitleSelect.innerText.split('|');
+        let firstStepText = stepTitle[0];
+        let firstRightContent = document.getElementById('rightStep1');
+        let contentList = document.querySelectorAll('.stylePostcard');
+        console.log(stepTitle);
+        
+        
+        //預設內容
+        firstRightContent.style.display ='block';
+        stepTitleSelect.innerText = firstStepText;
+        
+
+        //建立事件玲聽
+        previousStep.addEventListener('click',changeStepBack);
+        nextStep.addEventListener('click',changeStepNext);
+        
+        //函式區
+        function changeStepBack(){
+            let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+            stepTitleSelect.innerText =stepTitle[nowStepNum-1];
+        }
+        function changeStepNext(){
+            let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+            if(nowStepNum<stepTitle.length){
+                document.getElementById(`rightStep${nowStepNum+1}`).style.display = 'none';
+                stepTitleSelect.innerText =stepTitle[nowStepNum+1];
+                document.getElementById(`rightStep${nowStepNum+2}`).style.display = 'block';
+            }else{
+                
+            }
+        }
+    }
+    window.addEventListener('load',doFirst);
+</script>
 <body>
     <header >
         <div class="forphone">
@@ -69,24 +109,59 @@
             <div class="postcard_content">
                 <main class="postcard"></main>
                 <div class="rightPostcard">
-                    <div class="rightPostcard_aside" id="postcard_step1">
-                        <p class="level5">選擇材質</p>
-                        <div class="stylePostcard">
-                            <p>墨印淺棕</p>
-                            <div></div>
-                            <p>星空燦爛</p>
-                            <div></div>
-                            <p>懷舊格線</p>
-                            <div></div>
+                    <div class="rightPostcard_aside">
+                        <p class="level5 topStepText" id="stepTitleName">選擇材質|選擇照片|增加插圖|輸入內文|填寫收件人|分享社群</p>
+                        <div class="stylePostcard" id="rightStep1">                            
+                            <div class="paperTexture">
+                                <p>墨印淺棕</p>
+                                <div class='posBackground'></div>
+                            </div>
+                            
+                            <div class="paperTexture">
+                                <p >星空燦爛</p>
+                                <div class='posBackground'></div>
+                            </div>
+                            
+                            <div class="paperTexture">
+                                <p>懷舊格線</p>
+                                <div class='posBackground'></div>
+                            </div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep2">
+                            <div class="photoChoose">1</div>
+                            <div class="photoChoose">2</div>
+                            <div class="photoChoose">3</div>
+                            <div class="photoChoose">4</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep3">
+                            <div class="pictureChoose">5</div>
+                            <div class="pictureChoose">6</div>
+                            <div class="pictureChoose">7</div>
+                            <div class="pictureChoose">8</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep4">
+                            <div class="pictureChoose">9</div>
+                            <div class="pictureChoose">10</div>
+                            <div class="pictureChoose">11</div>
+                            <div class="pictureChoose">12</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep5">
+                            <div class="pictureChoose">13</div>
+                            <div class="pictureChoose">14</div>
+                            <div class="pictureChoose">15</div>
+                            <div class="pictureChoose">16</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep6">
+                            <div class="pictureChoose">17</div>
+                            <div class="pictureChoose">18</div>
+                            <div class="pictureChoose">19</div>
+                            <div class="pictureChoose">20</div>
                         </div>
                         <div class="stepContent">
-                            <button class="secondbtn2">上一步</button>
-                            <button class="secondbtn2">下一步</button>
+                            <button class="secondbtn2" id="previousStep" >上一步</button>
+                            <button class="secondbtn2" id="nextStep" >下一步</button>
                         </div>
                     </div>
-                    <div class="rightPostcard_aside" id="postcard_step2"></div>
-                    <div class="rightPostcard_aside"id="postcard_step3"></div>
-                    <div class="rightPostcard_aside"id="postcard_step4"></div>
                 </div>
             </div>
         </div>

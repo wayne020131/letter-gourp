@@ -487,8 +487,21 @@ select {
   line-height: 60px;
 }
 
+.wrap .postcard_content .rightPostcard .stylePostcard {
+  display: none;
+}
+
 .wrap .postcard_content .rightPostcard .stylePostcard p {
-  background-color: none;
+  text-align: center;
+  background-color: white;
+}
+
+.wrap .postcard_content .rightPostcard .stepContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .level0 {

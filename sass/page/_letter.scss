@@ -34,9 +34,15 @@
                 line-height: 60px;
             }
             .stylePostcard{
+                display: none;
                 p{
-                    background-color: none;
+                    text-align: center;
+                    background-color: white;
                 }
+            }
+            .stepContent{
+                display: flex;
+                justify-content: space-around;
             }
         }
     }
