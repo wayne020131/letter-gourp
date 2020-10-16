@@ -370,20 +370,23 @@ a {
 }
 
 .map {
-  height: 500px;
+  height: 550px;
   background: #333;
   display: inline-block;
   max-width: 900px;
   width: 100%;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .weather {
-  padding: 10px;
+  padding: 0 20px 0 0;
 }
 
 .search_area {
   margin: 10px auto;
+  border-bottom: 2px solid #C4C4C4;
+  max-width: 350px;
+  width: 100%;
 }
 
 .search_area p {
@@ -410,21 +413,45 @@ a {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   text-align: center;
+  padding: 10px 0 20px 0;
+  border-bottom: 2px solid #C4C4C4;
+}
+
+.infos .NowT {
+  padding: 0 12px;
+}
+
+.infos .NowT .TtoT {
+  color: #00A5A3;
+}
+
+.infos .PoP {
+  vertical-align: center;
+  padding: 20px 8px;
+  color: #00A5A3;
+}
+
+.infos .PoP p {
+  padding-top: 10px;
+  color: #007E85;
+}
+
+.infos .RH {
+  vertical-align: center;
+  padding: 20px 8px;
+  color: #00A5A3;
+}
+
+.infos .RH p {
+  padding-top: 10px;
+  color: #007E85;
 }
 
 .infosbox {
-  border: 2px solid #00A5A3;
+  border: 3px solid #007E85;
   border-radius: 5px;
   background-color: #F3F8F4;
-}
-
-.NowT {
-  padding: 0 8px;
-}
-
-.PoP, .RH {
-  vertical-align: center;
-  padding: 20px 8px;
+  font-weight: bold;
 }
 
 .weatherweek {
@@ -440,16 +467,24 @@ a {
   width: 100%;
 }
 
-.day {
+.weatherweek .week {
+  max-width: 50px;
+  width: 100%;
+  border-right: 1px solid white;
+}
+
+.weatherweek .day {
+  border-bottom: 1px solid white;
+  background-color: #00A5A3;
+  color: white;
+  padding: 6px 8px;
+}
+
+.weatherweek .temp {
+  border-bottom: 1px solid white;
   background-color: #70CACE;
-}
-
-.weatherweek p {
+  color: white;
   padding: 9px 8px;
-}
-
-#LowT, #HightT {
-  border-bottom: 1px solid gray;
 }
 
 .weatherdesc {
@@ -631,8 +666,11 @@ a {
         justify-content: space-around;
     text-align: center;
   }
-  .weatherweek p {
-    padding: 8px 4px;
+  .weatherweek .day {
+    padding: 6px 4px;
+  }
+  .weatherweek .temp {
+    padding: 9px 4px;
   }
   .weatherdesc {
     max-width: 300px;
@@ -677,15 +715,11 @@ a {
     width: 100%;
     margin: 0 auto;
   }
-  .weatherweek .week {
-    max-width: 50px;
-    width: 100%;
+  .weatherweek .day {
+    padding: 6px 4px;
   }
-  .weatherweek p {
-    padding: 8px 4px;
-  }
-  .weatherdesc {
-    width: 100%;
+  .weatherweek .temp {
+    padding: 9px 4px;
   }
   .weatherdesc {
     max-width: 350px;

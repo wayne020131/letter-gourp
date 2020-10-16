@@ -1,6 +1,3 @@
-//可瑾
-
-//--------------------------------
 .page{
     padding: 0px 0px 20px 0px;
 }
@@ -17,23 +14,26 @@
     border-right: 2px solid $grayColor2;
 }
 .map{
-    height: 500px;
+    height: 550px;
     background: #333;
     display: inline-block;
     max-width: 900px;
     width: 100%;
-    margin-left:10px ;
+    margin-left:20px ;
     // border: 1px solid red;
     
 }
 
 .weather{
-    padding: 10px;
+    padding: 0 20px 0 0;
 }
 //收尋bar
 .search_area{
     // border: 1px solid green;
     margin: 10px auto;
+    border-bottom: 2px solid $grayColor2;
+    max-width: 350px;
+    width: 100%;
 }
 .search_area p{
     margin: 20px 0;
@@ -54,40 +54,68 @@
     display: flex;
     justify-content: space-evenly;
     text-align: center;
+    padding: 10px 0 20px 0;
+    border-bottom: 2px solid $grayColor2;
+    .NowT{
+        padding:0 12px ;
+        .TtoT{
+            color: $greenColor3;
+        }
+    }
+    .PoP{
+        vertical-align: center;
+        padding: 20px 8px;
+        color: $greenColor3;
+        p{
+            padding-top: 10px;
+            color: $greenColor1;;
+        }
+    }
+    .RH{
+        vertical-align: center;
+        padding: 20px 8px ;
+        color: $greenColor3;
+        p{
+            padding-top: 10px;
+            color: $greenColor1;;
+        }
+    }
 }
 .infosbox{
-    border: 2px solid $greenColor3;
+    border: 3px solid $greenColor1;
     border-radius: 5px;
     background-color: $greenColor4;
-}
-.NowT{
-    padding:0 8px ;
+    font-weight: bold;
 }
 
-.PoP,.RH{
-    vertical-align: center;
-    padding: 20px 8px ;
-}
 
-.weatherweek{
+
+.weatherweek{ 
     display: flex;
     text-align: center;
     justify-content:center;
     margin: 20px auto;
     max-width: 350px;
-    width: 100%;
-    // border: 1px solid gray;
+    width: 100%;    
+    .week{
+        max-width: 50px;
+        width: 100%;
+        border-right:1px solid white ;
+    }
+    .day{
+        border-bottom:1px solid white ;
+        background-color: $greenColor3;
+        color: white;
+        padding: 6px 8px;
+    }
+    .temp{
+        border-bottom:1px solid white ;
+        background-color: $greenColor2;
+        color: white;
+        padding: 9px 8px;
+    }
+}
 
-}
-.day{
-    background-color: $greenColor2;
-}
-.weatherweek p{
-    padding: 9px 8px;
-}
-#LowT,#HightT{
-    border-bottom: 1px solid gray;
-}
 
 .weatherdesc{
     margin: 0 auto;
@@ -234,8 +262,13 @@
         justify-content: space-around;
         text-align: center;
     }
-    .weatherweek p{
-        padding: 8px 4px;
+    .weatherweek{     
+        .day{
+            padding: 6px 4px;
+        }
+        .temp{
+            padding: 9px 4px;
+        }
     }
     .weatherdesc{
         max-width: 300px;
@@ -283,17 +316,12 @@
         margin: 0 auto;
     }
     .weatherweek{     
-        .week{
-            max-width: 50px;
-            width: 100%;
+        .day{
+            padding: 6px 4px;
         }
-        p{
-            padding: 8px 4px;
+        .temp{
+            padding: 9px 4px;
         }
-    }
-
-    .weatherdesc{
-        width: 100%;
     }
     .weatherdesc{
         max-width: 350px;
