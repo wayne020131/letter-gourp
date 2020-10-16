@@ -16,60 +16,71 @@
     // border: 1px solid red;
 }
 #weatherbox{
-    border: 1px solid blue;
+    // border: 1px solid blue;
 }
 .weather{
     // border: 1px solid red;
     padding: 10px;
 }
+//收尋bar
 .search_area{
-    border: 1px solid green;
+    // border: 1px solid green;
+    margin: 10px auto;
 }
-
 .search_area p{
     margin: 20px 0;
     line-height: 30px;
+    text-align: center;
 }
 .search_area label{
     display: inline-block;
-    width: calc(100%-240px);
+    width: calc(100%-250px);
 }
 .search_area select{
-    width: 240px;
+    width: 250px;
     height: 30px;
 }
 
+//溫度、降雨、濕度
 .infos{
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    // border: 1px solid red;
 }
 .infosbox{
     border: 2px solid $greenColor3;
     border-radius: 5px;
     background-color: $greenColor4;
 }
-.PoP{
-    vertical-align: center;
-}
-.RH{
-    vertical-align: center;
+.NowT{
+    padding:0 8px ;
 }
 
-.NowT>p{
-    font-size: 3rem;
-    padding: 0 0 20px 0;
+.PoP,.RH{
+    vertical-align: center;
+    padding: 20px 8px ;
 }
 
 .weatherweek{
     display: flex;
     text-align: center;
-    justify-content: space-evenly;
-    border: 1px solid red;
+    justify-content:center;
+    margin: 20px auto;
+
+}
+.day{
+    background-color: $greenColor2;
 }
 .weatherweek p{
-    padding: .5rem;
+    padding: 9px;
+}
+#LowT,#HightT{
+    border-bottom: 1px solid gray;
+}
+
+.weatherdesc{
+    margin: 0 auto;
+    width: 370px;
 }
 
 //熱門景點
@@ -80,4 +91,66 @@
 .other_popular_area{
     display: flex;
     justify-content: space-around;
+}
+
+
+//rwd
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .search_area label{
+        width: calc(100%-200px);
+    }
+    .search_area select{
+        width: 200px;
+    }
+    
+    .infos{
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .weatherweek p{
+        padding: 8px 4px;
+    }
+    .weatherdesc{
+        border: 1px solid yellow;
+        max-width: 300px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px){
+    .spot{
+        display: block;
+    }
+    .search_area{
+        p{
+            label{
+                width: calc(100%-215px);
+            }
+            select{
+                width: 215px;
+            }
+        }
+    }
+    .infos{
+        max-width: 350px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .weatherweek{     
+        .week{
+            max-width: 50px;
+            width: 100%;
+        }
+        p{
+            padding: 8px 4px;
+        }
+    }
+
+    .weatherdesc{
+        width: 100%;
+    }
+    .weatherdesc{
+        max-width: 350px;
+        width: 100%;
+    }
 }

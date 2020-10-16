@@ -369,30 +369,27 @@ a {
   width: 100%;
 }
 
-#weatherbox {
-  border: 1px solid blue;
-}
-
 .weather {
   padding: 10px;
 }
 
 .search_area {
-  border: 1px solid green;
+  margin: 10px auto;
 }
 
 .search_area p {
   margin: 20px 0;
   line-height: 30px;
+  text-align: center;
 }
 
 .search_area label {
   display: inline-block;
-  width: calc(100%-240px);
+  width: calc(100%-250px);
 }
 
 .search_area select {
-  width: 240px;
+  width: 250px;
   height: 30px;
 }
 
@@ -412,17 +409,13 @@ a {
   background-color: #F3F8F4;
 }
 
-.PoP {
-  vertical-align: center;
+.NowT {
+  padding: 0 8px;
 }
 
-.RH {
+.PoP, .RH {
   vertical-align: center;
-}
-
-.NowT > p {
-  font-size: 3rem;
-  padding: 0 0 20px 0;
+  padding: 20px 8px;
 }
 
 .weatherweek {
@@ -430,14 +423,27 @@ a {
   display: -ms-flexbox;
   display: flex;
   text-align: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  border: 1px solid red;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px auto;
+}
+
+.day {
+  background-color: #70CACE;
 }
 
 .weatherweek p {
-  padding: .5rem;
+  padding: 9px;
+}
+
+#LowT, #HightT {
+  border-bottom: 1px solid gray;
+}
+
+.weatherdesc {
+  margin: 0 auto;
+  width: 370px;
 }
 
 .popular_area {
@@ -452,6 +458,62 @@ a {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .search_area label {
+    width: calc(100%-200px);
+  }
+  .search_area select {
+    width: 200px;
+  }
+  .infos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    text-align: center;
+  }
+  .weatherweek p {
+    padding: 8px 4px;
+  }
+  .weatherdesc {
+    border: 1px solid yellow;
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .spot {
+    display: block;
+  }
+  .search_area p label {
+    width: calc(100%-215px);
+  }
+  .search_area p select {
+    width: 215px;
+  }
+  .infos {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .weatherweek .week {
+    max-width: 50px;
+    width: 100%;
+  }
+  .weatherweek p {
+    padding: 8px 4px;
+  }
+  .weatherdesc {
+    width: 100%;
+  }
+  .weatherdesc {
+    max-width: 350px;
+    width: 100%;
+  }
 }
 
 .level0 {
