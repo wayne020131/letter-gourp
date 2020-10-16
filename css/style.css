@@ -361,12 +361,17 @@ a {
   display: flex;
 }
 
+#weatherbox {
+  border-right: 2px solid #C4C4C4;
+}
+
 .map {
   height: 500px;
   background: #333;
   display: inline-block;
   max-width: 900px;
   width: 100%;
+  margin-left: 10px;
 }
 
 .weather {
@@ -427,6 +432,8 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 20px auto;
+  max-width: 350px;
+  width: 100%;
 }
 
 .day {
@@ -434,7 +441,7 @@ a {
 }
 
 .weatherweek p {
-  padding: 9px;
+  padding: 9px 8px;
 }
 
 #LowT, #HightT {
@@ -443,7 +450,7 @@ a {
 
 .weatherdesc {
   margin: 0 auto;
-  width: 370px;
+  width: 360px;
 }
 
 .popular_area {
@@ -452,19 +459,50 @@ a {
   display: flex;
 }
 
+.popular_area .area_pic {
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+}
+
+.popular_area .area_info {
+  -webkit-box-flex: 60%;
+      -ms-flex: 60%;
+          flex: 60%;
+}
+
 .other_popular_area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-align: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
 
+.other_popular_area .card img {
+  max-width: 250px;
+  width: 100%;
+  text-align: center;
+}
+
+.other_popular_area .card:nth-child(1) {
+  margin-right: 20px;
+}
+
+.other_popular_area .card:nth-child(2) {
+  margin-right: 20px;
+}
+
+.other_popular_area .card:nth-child(3) {
+  margin-right: 20px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .search_area label {
+  .search_area p label {
     width: calc(100%-200px);
   }
-  .search_area select {
+  .search_area p select {
     width: 200px;
   }
   .infos {
@@ -479,15 +517,29 @@ a {
     padding: 8px 4px;
   }
   .weatherdesc {
-    border: 1px solid yellow;
     max-width: 300px;
     width: 100%;
+  }
+  .other_popular_area {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .other_popular_area .card {
+    -webkit-box-flex: 30%;
+        -ms-flex: 30%;
+            flex: 30%;
+  }
+  .other_popular_area .card:nth-child(2) {
+    margin-right: 0px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .spot {
     display: block;
+  }
+  #weatherbox {
+    border-right: none;
   }
   .search_area p label {
     width: calc(100%-215px);
@@ -513,6 +565,39 @@ a {
   .weatherdesc {
     max-width: 350px;
     width: 100%;
+  }
+  .other_popular_area {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .other_popular_area .card {
+    -webkit-box-flex: 30%;
+        -ms-flex: 30%;
+            flex: 30%;
+  }
+  .other_popular_area .card:nth-child(2) {
+    margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .popular_area {
+    display: block;
+  }
+  .popular_area .area_pic img {
+    width: 100%;
+  }
+  .other_popular_area {
+    display: block;
+  }
+  .other_popular_area .card:nth-child(1) {
+    margin-right: 0px;
+  }
+  .other_popular_area .card:nth-child(2) {
+    margin-right: 0px;
+  }
+  .other_popular_area .card:nth-child(3) {
+    margin-right: 0px;
   }
 }
 
