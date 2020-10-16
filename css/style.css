@@ -487,6 +487,10 @@ select {
   line-height: 60px;
 }
 
+.wrap .postcard_content .rightPostcard .stylePostcard p {
+  background-color: none;
+}
+
 .level0 {
   font-size: 14px;
   line-height: 20px;
