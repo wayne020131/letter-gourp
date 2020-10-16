@@ -1,8 +1,11 @@
+.page{
+    padding: 0px 0px 20px 0px;
+}
 .camping_block{
     background-color: white;
     border-radius: 10px;
     padding:20px;
-    margin: 20px 0;
+    margin: 10px 0 20px;
 }
 .spot{
     display: flex;
@@ -23,7 +26,6 @@
 
 .weather{
     padding: 10px;
-
 }
 //收尋bar
 .search_area{
@@ -123,8 +125,41 @@
     }
 
 }
-
-
+//近期揪團
+.currently_gruop{
+    border-bottom: 2px solid $grayColor2;
+    padding: 0 0 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    .card{
+        max-width: 200px;
+        // border: 1px solid red;
+        width: 100%;
+        text-align: center;
+        img{
+            border-radius: 9px;
+        }
+        .detail{
+            text-align: right;
+            button{
+                display:inline-block;
+                margin: 5px 0;
+            }
+        }
+    }
+    .card:nth-child(1){
+        margin-right: 30px;
+    }
+    .card:nth-child(2){
+        margin-right: 30px;
+    }
+}
+.camping_btn{
+    .more_btn{
+        display: block;
+        margin: 20px auto 10px;
+    }
+}
 //rwd
 @media screen and (min-width: 768px) and (max-width: 991px){
     .search_area{
@@ -166,6 +201,14 @@
     }
     #weatherbox{
         border-right: none;
+    }
+    .map{
+        margin-left:0px ;
+        height: 350px;
+    }
+    
+    .weather{
+        padding: 0 0 10px 0;
     }
     .search_area{
         p{
@@ -209,7 +252,29 @@
             margin-right: 0px;
         }
     }
-
+//近期揪團
+.currently_gruop{
+    border-bottom: none;
+    display: block;
+    .card{
+        text-align: center;
+        margin: 0 auto;
+        // border: 1px solid red;
+        max-width: 350px;
+        width: 100%;
+        img{
+            border-radius: 9px;
+            max-width: 350px;
+        width: 100%;
+        }
+    }
+    .card:nth-child(1){
+        margin: 0 auto 10px;
+    }
+    .card:nth-child(2){
+        margin: 0 auto 10px;
+    }
+}
 }
 @media screen and (max-width: 576px){
     .popular_area{

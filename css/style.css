@@ -348,11 +348,15 @@ a {
   }
 }
 
+.page {
+  padding: 0px 0px 20px 0px;
+}
+
 .camping_block {
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-  margin: 20px 0;
+  margin: 10px 0 20px;
 }
 
 .spot {
@@ -498,6 +502,49 @@ a {
   margin-right: 20px;
 }
 
+.currently_gruop {
+  border-bottom: 2px solid #C4C4C4;
+  padding: 0 0 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.currently_gruop .card {
+  max-width: 200px;
+  width: 100%;
+  text-align: center;
+}
+
+.currently_gruop .card img {
+  border-radius: 9px;
+}
+
+.currently_gruop .card .detail {
+  text-align: right;
+}
+
+.currently_gruop .card .detail button {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.currently_gruop .card:nth-child(1) {
+  margin-right: 30px;
+}
+
+.currently_gruop .card:nth-child(2) {
+  margin-right: 30px;
+}
+
+.camping_btn .more_btn {
+  display: block;
+  margin: 20px auto 10px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .search_area p label {
     width: calc(100%-200px);
@@ -541,6 +588,13 @@ a {
   #weatherbox {
     border-right: none;
   }
+  .map {
+    margin-left: 0px;
+    height: 350px;
+  }
+  .weather {
+    padding: 0 0 10px 0;
+  }
   .search_area p label {
     width: calc(100%-215px);
   }
@@ -577,6 +631,27 @@ a {
   }
   .other_popular_area .card:nth-child(2) {
     margin-right: 0px;
+  }
+  .currently_gruop {
+    border-bottom: none;
+    display: block;
+  }
+  .currently_gruop .card {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 350px;
+    width: 100%;
+  }
+  .currently_gruop .card img {
+    border-radius: 9px;
+    max-width: 350px;
+    width: 100%;
+  }
+  .currently_gruop .card:nth-child(1) {
+    margin: 0 auto 10px;
+  }
+  .currently_gruop .card:nth-child(2) {
+    margin: 0 auto 10px;
   }
 }
 
