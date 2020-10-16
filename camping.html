@@ -10,6 +10,8 @@
     <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./hamburgers-master/dist/hamburgers.css">
+    <!-- <script src="js/vue.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
 </head>
 <body>
     <header >
@@ -51,7 +53,9 @@
                         <div class="weathernow">
                             <!-- 地區搜尋 -->
                             <div class="search_area">
-                                <p>
+                            <!-- <div id="app"></div> -->
+                            <component :is="Select"></component>
+                                <!-- <p>
                                     <label class="third_title" for="">選擇地區:</label>
                                     <select name="" id="" placeholder="--請選擇--">
                                         <option value="1">北</option>
@@ -67,7 +71,7 @@
                                         <option value="">桃園市</option>
                                         <option value="">新竹縣</option>
                                     </select>
-                                </p>
+                                </p> -->
                             </div>
                             
                             <!-- 溫度、降雨、濕度 -->
@@ -135,7 +139,6 @@
                             <div class="level1">更新時間：<span class="nowTime">年月日時分秒</span>
                             </div>
                         </div>
-                        <!-- 更新時間 -->
                     </div>
                 </div>
                 
@@ -279,6 +282,8 @@
         }
 
     </script>
+
+
     <script src="https://unpkg.com/jquery"></script>
     <script>
                 // 北1塔曼山 + 北3雪白山
@@ -528,5 +533,69 @@
         }
 
     </script>
+
+<!-- vue -->
+<script>
+    Vue.component('Select', {
+        props: ['value', 'options', 'label'],
+        computed: {
+        index: {
+            get() {
+            return this.value;
+            },
+            set(val) {
+            this.$emit("input", val);
+            }
+        }
+        },
+        methods: {
+        optionText(item) {    	
+            if( this.label === 'text' ) {
+            return item["text"];
+            }
+            else {
+            return eval("item." + this.label);
+            }
+            
+        }
+        },
+        template: 
+        `  	
+        <select v-model="index">    	
+            <option v-for="(item, index) in options" :value="index">{{optionText(item)}}</option>
+        </select>    	
+        `
+    });
+
+    new Vue({
+        el: "#app",
+        data: {
+        cityIndex: 0,
+        areaIndex: 0,
+        },
+        watch: {
+        areaIndex() {
+            this.cityIndex = 0;
+        }
+        },
+        computed: {
+        areas() {
+            return spots;
+        },
+        cities() {
+            return spots[this.areaIndex].city;
+        },
+
+        },
+        template: 
+        `
+        <div>
+            地區<Select v-model="areaIndex" :options="spots" label="area"></Select>
+            縣市<Select v-model="cityIndex" :options="cities" label="text"></Select>
+            <div>{{ this.areaIndex }} - {{ this.cityIndex }} </div>
+        </div>
+        `,
+    });
+</script>
 </body>
 </html>
