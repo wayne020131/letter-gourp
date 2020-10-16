@@ -36,10 +36,11 @@
         }
         function changeStepNext(){
             let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+            let nowRightNum =  nowStepNum+1;
             if(nowStepNum<stepTitle.length){
-                document.getElementById(`rightStep${nowStepNum+1}`).style.display = 'none';
-                stepTitleSelect.innerText =stepTitle[nowStepNum+1];
-                document.getElementById(`rightStep${nowStepNum+2}`).style.display = 'block';
+                document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
+                stepTitleSelect.innerText =stepTitle[nowRightNum];
+                document.getElementById(`rightStep${nowRightNum+1}`).style.display = 'block';
             }else{
                 
             }
