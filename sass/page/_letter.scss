@@ -43,6 +43,18 @@
             .stepContent{
                 display: flex;
                 justify-content: space-around;
+                .stepHover{
+                    background-color: #FFFFFF;
+                    color: #00A5A3;
+                    width: 120px;
+                    height: 45px;
+                    font-size: 16px;
+                    border-radius: 8px;
+                    border-color: #00A5A3;
+                    border-width: 3px;
+                    font-weight: bold;
+                    position: relative;
+                }
             }
         }
     }

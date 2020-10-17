@@ -18,13 +18,17 @@
         let firstStepText = stepTitle[stepControl];
         let firstRightContent = document.getElementById('rightStep1');
         let contentList = document.querySelectorAll('.stylePostcard');
+        let previousStepCss = window.getComputedStyle(previousStep,':hover');
         
-        console.log(stepTitle);
+        console.log(previousStepCss);
         
         
         //預設內容
         firstRightContent.style.display ='block';
         stepTitleSelect.innerText = firstStepText;
+        previousStep.classList.remove('secondbtn2');
+        previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3;width: 120px; height: 45px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:3px; font-weight: bold; position: relative;")
+
         
         
 
@@ -35,23 +39,43 @@
         //函式區
         function changeStepBack(){
             stepControl-=1;
-            let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
-            let nowRightNum =  nowStepNum+1;
+            if(stepControl==0){
+                previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3;width: 120px; height: 45px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:3px; font-weight: bold; position: relative;")
+                previousStep.classList.remove('secondbtn2');
+                let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+                let nowRightNum =  nowStepNum+1;
+                document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
+                stepTitleSelect.innerText =stepTitle[stepControl];
+                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'block';
+                
+            }else if(stepControl>0){
+                
+                let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+                let nowRightNum =  nowStepNum+1;
                 document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
                 stepTitleSelect.innerText =stepTitle[stepControl];
                 document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'block';
                 console.log(stepTitleSelect.innerText);
+            }else if(stepControl<0){
+                stepControl+=1;
+            }
+
+
             
         }
         function changeStepNext(){
             stepControl+=1;
+            if(stepControl!=0){
+                previousStep.removeAttribute('style');
+                previousStep.classList.add('secondbtn2');
             let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
             let nowRightNum =  nowStepNum+1;
-            if(nowStepNum<stepTitle.length-1){
-                document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
-                stepTitleSelect.innerText =stepTitle[stepControl];
-                document.getElementById(`rightStep${nowRightNum+1}`).style.display = 'block';
-                console.log(nowStepNum);
+                if(nowStepNum<stepTitle.length-1){
+                    document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
+                    stepTitleSelect.innerText =stepTitle[stepControl];
+                    document.getElementById(`rightStep${nowRightNum+1}`).style.display = 'block';
+                    console.log(nowStepNum);
+                }
             }
         }
     }
