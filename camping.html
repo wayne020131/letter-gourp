@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>營區攻略</title>
-    <link rel="stylesheet" href="./grid/simple-grid.css">
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css" />
     <link rel="stylesheet" href="./reset.css">
     <script src="https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js"></script>
@@ -23,13 +22,18 @@
         </button>
         </div>
         <nav class="wrap">
-            <h1 class="nav_logo">
-                <a href="#">
+            <div href="#" class="nav_logo">
+                <a href="#" class="logo_link -bottom">
                     <img class="desk sun" src="./pic/太陽.svg" alt="">
-                    <img class="desk" src="./pic/電腦版_header.svg">
-                    <img class="phone" src="./pic/手機_header.svg">
                 </a>
-            </h1>
+                <a class="changelogo" href="#">
+                <img class="phone" src="./pic/手機_header.svg">
+                </a>
+                <div class="middle_bg"></div>
+                <a href="#" class="logo_link -up">
+                    <img class="desk" src="./pic/電腦版_header.svg">
+                </a>
+            </div>
             <div class="nav_list">
                 <ul >
                     <li><a class="nav_title" href="#">揪團露營</a></li>
@@ -176,7 +180,7 @@
                 </div>
             </div>
         </div>
-        <div class="level0 copyright">Copyright &copy; 2020ShanSen</div>
+        <div class="level1 copyright">Copyright &copy; 2020ShanSen</div>
     </footer>
 
     <script>
@@ -281,7 +285,7 @@
                             <label class="third_title" for="">選擇營地:</label>
                             <Select v-model="cityIndex" :options="cities" label="text"></Select>
                         </p>
-                        <!-- <div>{{ this.areaIndex }} - {{ this.cityIndex }} </div>-->
+                        <!--<div>{{ this.areaIndex }} - {{ this.cityIndex }} </div>-->
                     </div>
                         
                     <!-- 溫度、降雨、濕度 -->

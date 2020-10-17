@@ -8,28 +8,30 @@
     margin: 10px 0 20px;
 }
 //麵包穴
-.breadcrumbs{
-    ul{
-        text-align: left;
-        height: auto;
-        
-        li{
-            margin: 0px;
-            line-height: auto;
+.section1{
+    .breadcrumbs{
+        ul{
+            text-align: left;
             height: auto;
-            a{
-                font-weight:bold;
-                &:hover{
-                    color: $greenColor3;
+            
+            li{
+                margin: 0px;
+                line-height: auto;
+                height: auto;
+                a{
+                    font-weight:bold;
+                    &:hover{
+                        color: $greenColor3;
+                    }
                 }
-            }
-            &::after{
-                content: ">";
-                color: #007E85;
-                margin: 10px;
-            }
-            &:last-child::after{
-                content: "";
+                &::after{
+                    content: ">";
+                    color: #007E85;
+                    margin: 10px;
+                }
+                &:last-child::after{
+                    content: "";
+                }
             }
         }
     }
