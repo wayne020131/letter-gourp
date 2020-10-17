@@ -14,15 +14,18 @@
         let previousStep = document.getElementById('previousStep');
         let nextStep = document.getElementById('nextStep');
         let stepTitle = stepTitleSelect.innerText.split('|');
-        let firstStepText = stepTitle[0];
+        let stepControl = 0;
+        let firstStepText = stepTitle[stepControl];
         let firstRightContent = document.getElementById('rightStep1');
         let contentList = document.querySelectorAll('.stylePostcard');
+        
         console.log(stepTitle);
         
         
         //預設內容
         firstRightContent.style.display ='block';
         stepTitleSelect.innerText = firstStepText;
+        
         
 
         //建立事件玲聽
@@ -31,25 +34,24 @@
         
         //函式區
         function changeStepBack(){
+            stepControl-=1;
             let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
             let nowRightNum =  nowStepNum+1;
-            if(0<=nowStepNum<=stepTitle.length){
                 document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
-                stepTitleSelect.innerText =stepTitle[nowRightNum];
+                stepTitleSelect.innerText =stepTitle[stepControl];
                 document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'block';
-                
-            }
+                console.log(stepTitleSelect.innerText);
             
         }
         function changeStepNext(){
+            stepControl+=1;
             let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
             let nowRightNum =  nowStepNum+1;
-            if(nowStepNum<stepTitle.length){
+            if(nowStepNum<stepTitle.length-1){
                 document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
-                stepTitleSelect.innerText =stepTitle[nowRightNum];
+                stepTitleSelect.innerText =stepTitle[stepControl];
                 document.getElementById(`rightStep${nowRightNum+1}`).style.display = 'block';
-            }else{
-                
+                console.log(nowStepNum);
             }
         }
     }
