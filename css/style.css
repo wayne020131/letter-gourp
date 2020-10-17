@@ -297,9 +297,13 @@ a {
   flex: 20%;
 }
 
-.footerarrange .footercenter a img {
+.footerarrange .footercenter a {
   display: block;
+  width: 120px;
   margin: 0 auto;
+}
+
+.footerarrange .footercenter a img {
   width: 120px;
 }
 
@@ -425,7 +429,7 @@ a {
 }
 
 .search_area p {
-  margin: 20px 0;
+  margin: 10px 0;
   line-height: 30px;
   text-align: center;
 }
