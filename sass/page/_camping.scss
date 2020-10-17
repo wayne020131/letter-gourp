@@ -7,6 +7,33 @@
     padding:20px;
     margin: 10px 0 20px;
 }
+//麵包穴
+.breadcrumbs{
+    ul{
+        text-align: left;
+        height: auto;
+        
+        li{
+            margin: 0px;
+            line-height: auto;
+            height: auto;
+            a{
+                font-weight:bold;
+                &:hover{
+                    color: $greenColor3;
+                }
+            }
+            &::after{
+                content: ">";
+                color: #007E85;
+                margin: 10px;
+            }
+            &:last-child::after{
+                content: "";
+            }
+        }
+    }
+}
 .spot{
     display: flex;
 }
@@ -27,29 +54,37 @@
 .leaflet-popup-content-wrapper{
     width: 200px;
 }
+.leaflet-popup-content{
+    margin: 18px 16px;
+    a{
+        img{
+            width: 167px;
+            border-radius: 5px;
+        }
+    }
+}
 .weather{
     padding: 0 20px 0 0;
 }
-//收尋bar
+//搜尋bar
 .search_area{
-    // border: 1px solid green;
     margin: 10px auto;
     border-bottom: 2px solid $grayColor2;
     max-width: 350px;
     width: 100%;
-}
-.search_area p{
-    margin: 20px 0;
-    line-height: 30px;
-    text-align: center;
-}
-.search_area label{
-    display: inline-block;
-    width: calc(100%-250px);
-}
-.search_area select{
-    width: 250px;
-    height: 30px;
+    p{
+        margin: 20px 0;
+        line-height: 30px;
+        text-align: center;
+        label{
+            display: inline-block;
+            width: calc(100%-250px);
+        }
+        select{
+            width: 250px;
+            height: 30px;
+        }
+    }
 }
 
 //溫度、降雨、濕度
@@ -130,13 +165,16 @@
     display: flex;
     position: relative;
     overflow: hidden;
+    .coll_num{
+        float: right;
+    }
     .area_pic{
-        flex: 40%;
-        padding: 0 20px;
+        padding-right: 20px;
+        img{
+            width: 400px;
+        }
     }
-    .area_info{
-        flex: 60%;
-    }
+
     .hot{
         background-color:  $orangeColor2; 
         width: 170px;
@@ -218,10 +256,8 @@
 //camping2
 .location{
     .collect{
-        display: flex;
-        .collect_btn{
-            width: 100px;
-            text-align: right;
+        button{
+            float: right;
         }
     }
     .big_pic{
@@ -277,11 +313,19 @@
         max-width: 300px;
         width: 100%;
     }
+    //熱門營區
+    .popular_area{
+        .area_pic{
+            img{
+                width: 350px;
+            }
+        }
+    }
     //其他熱門營區
     .other_popular_area{
         flex-wrap: wrap;
         .card{
-            flex: 30%;
+            flex: 40%;
         }
         .card:nth-child(2){
             margin-right: 0px;
@@ -330,62 +374,66 @@
         max-width: 350px;
         width: 100%;
     }
-    //其他熱門營區
-    .other_popular_area{
-        flex-wrap: wrap;
-        .card{
-            flex: 30%;
-        }
-        .card:nth-child(2){
-            margin-right: 0px;
-        }
-    }
-//近期揪團
-.currently_gruop{
-    border-bottom: none;
-    display: block;
-    .card{
-        text-align: center;
-        margin: 0 auto;
-        // border: 1px solid red;
-        max-width: 350px;
-        width: 100%;
-        img{
-            border-radius: 9px;
-            max-width: 350px;
-        width: 100%;
-        }
-    }
-    .card:nth-child(1){
-        margin: 0 auto 10px;
-    }
-    .card:nth-child(2){
-        margin: 0 auto 10px;
-    }
-}
-}
-@media screen and (max-width: 576px){
+    //熱門營區
     .popular_area{
         display: block;
         .area_pic{
+            padding-right: 0px;
             img{
                 width: 100%;
             }
         }
     }
-        //其他熱門營區
-        .other_popular_area{
-            display: block;
-            .card:nth-child(1){
-                margin-right: 0px;
-            }
-            .card:nth-child(2){
-                margin-right: 0px;
-            }
-            .card:nth-child(3){
-                margin-right: 0px;
+
+    //其他熱門營區
+    .other_popular_area{
+        flex-wrap: wrap;
+        .card{
+            flex: 40%;
+        }
+        .card:nth-child(2){
+            margin-right: 0px;
+        }
+    }
+
+    //近期揪團
+    .currently_gruop{
+        border-bottom: none;
+        display: block;
+        .card{
+            text-align: center;
+            margin: 0 auto;
+            // border: 1px solid red;
+            max-width: 350px;
+            width: 100%;
+            img{
+                border-radius: 9px;
+                max-width: 350px;
+            width: 100%;
             }
         }
+        .card:nth-child(1){
+            margin: 0 auto 10px;
+        }
+        .card:nth-child(2){
+            margin: 0 auto 10px;
+        }
+    }
+}
+@media screen and (max-width: 576px){
+    //其他熱門營區
+    .other_popular_area{
+        display: block;
+        .card:nth-child(1){
+            margin-right: 0px;
+        }
+        .card:nth-child(2){
+            margin-right: 0px;
+        }
+        .card:nth-child(3){
+            margin-right: 0px;
+        }
+    }
 }
 
 

@@ -104,36 +104,6 @@ table {
   background-color: #F3F8F4;
 }
 
-@media screen and (min-width: 1200px) {
-  .wrap {
-    width: 1140px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .wrap {
-    width: 960px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .wrap {
-    width: 720px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .wrap {
-    width: 540px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .wrap {
-    width: 100%;
-  }
-}
-
 header {
   background-color: #F3F8F4;
   height: 70px;
@@ -264,6 +234,9 @@ a {
   .wrap {
     width: 540px;
   }
+  header {
+    margin-bottom: 0px;
+  }
   .nav_list {
     display: none;
     width: 100%;
@@ -359,6 +332,35 @@ a {
   margin: 10px 0 20px;
 }
 
+.breadcrumbs ul {
+  text-align: left;
+  height: auto;
+}
+
+.breadcrumbs ul li {
+  margin: 0px;
+  line-height: auto;
+  height: auto;
+}
+
+.breadcrumbs ul li a {
+  font-weight: bold;
+}
+
+.breadcrumbs ul li a:hover {
+  color: #00A5A3;
+}
+
+.breadcrumbs ul li::after {
+  content: ">";
+  color: #007E85;
+  margin: 10px;
+}
+
+.breadcrumbs ul li:last-child::after {
+  content: "";
+}
+
 .spot {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -382,6 +384,15 @@ a {
   width: 200px;
 }
 
+.leaflet-popup-content {
+  margin: 18px 16px;
+}
+
+.leaflet-popup-content a img {
+  width: 167px;
+  border-radius: 5px;
+}
+
 .weather {
   padding: 0 20px 0 0;
 }
@@ -399,12 +410,12 @@ a {
   text-align: center;
 }
 
-.search_area label {
+.search_area p label {
   display: inline-block;
   width: calc(100%-250px);
 }
 
-.search_area select {
+.search_area p select {
   width: 250px;
   height: 30px;
 }
@@ -504,17 +515,16 @@ a {
   overflow: hidden;
 }
 
-.popular_area .area_pic {
-  -webkit-box-flex: 40%;
-      -ms-flex: 40%;
-          flex: 40%;
-  padding: 0 20px;
+.popular_area .coll_num {
+  float: right;
 }
 
-.popular_area .area_info {
-  -webkit-box-flex: 60%;
-      -ms-flex: 60%;
-          flex: 60%;
+.popular_area .area_pic {
+  padding-right: 20px;
+}
+
+.popular_area .area_pic img {
+  width: 400px;
 }
 
 .popular_area .hot {
@@ -608,15 +618,8 @@ a {
   margin: 20px auto 10px;
 }
 
-.location .collect {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.location .collect .collect_btn {
-  width: 100px;
-  text-align: right;
+.location .collect button {
+  float: right;
 }
 
 .location .big_pic {
@@ -680,14 +683,17 @@ a {
     max-width: 300px;
     width: 100%;
   }
+  .popular_area .area_pic img {
+    width: 350px;
+  }
   .other_popular_area {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   .other_popular_area .card {
-    -webkit-box-flex: 30%;
-        -ms-flex: 30%;
-            flex: 30%;
+    -webkit-box-flex: 40%;
+        -ms-flex: 40%;
+            flex: 40%;
   }
   .other_popular_area .card:nth-child(2) {
     margin-right: 0px;
@@ -729,14 +735,23 @@ a {
     max-width: 350px;
     width: 100%;
   }
+  .popular_area {
+    display: block;
+  }
+  .popular_area .area_pic {
+    padding-right: 0px;
+  }
+  .popular_area .area_pic img {
+    width: 100%;
+  }
   .other_popular_area {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   .other_popular_area .card {
-    -webkit-box-flex: 30%;
-        -ms-flex: 30%;
-            flex: 30%;
+    -webkit-box-flex: 40%;
+        -ms-flex: 40%;
+            flex: 40%;
   }
   .other_popular_area .card:nth-child(2) {
     margin-right: 0px;
@@ -765,12 +780,6 @@ a {
 }
 
 @media screen and (max-width: 576px) {
-  .popular_area {
-    display: block;
-  }
-  .popular_area .area_pic img {
-    width: 100%;
-  }
   .other_popular_area {
     display: block;
   }
@@ -1076,6 +1085,39 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .wrap {
+    width: 1140px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .wrap {
+    width: 960px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .wrap {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wrap {
+    width: 540px;
+  }
+  .section1 {
+    padding-top: 90px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrap {
+    width: 100%;
+  }
 }
 
 .level0 {

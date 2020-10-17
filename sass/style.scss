@@ -6,10 +6,6 @@
 
 //compontent
 @import "component/input";
-//mixin
-@import "mixin/rwd";
-@import "mixin/gird";
-@import "mixin/button";
 
 //layout
 @import "layout/header";
@@ -24,6 +20,10 @@
 @import "page/main";
 @import "page/member";
 
+//mixin
+@import "mixin/gird";
+@import "mixin/button";
+@import "mixin/rwd";
 
 
 

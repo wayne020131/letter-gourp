@@ -6,17 +6,19 @@
 @media screen and (min-width: 992px) and (max-width: 1199px){
 .wrap{
     width: 960px;
-}
-
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 991px){
 .wrap{
     width: 720px;
-}
+    }
 }
 @media screen and (max-width: 767px){
 .wrap{
     width: 540px;
+    }
+    .section1{
+        padding-top: 90px !important;
     }
 }
 @media screen and (max-width: 576px){
