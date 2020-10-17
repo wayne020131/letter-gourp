@@ -186,8 +186,7 @@ a {
   position: fixed;
   top: 10px;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 @media screen and (min-width: 1200px) {
@@ -282,37 +281,38 @@ a {
 }
 
 .footerarrange {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
 }
 
-.footright {
-  -webkit-box-flex: 35%;
-      -ms-flex: 35%;
-          flex: 35%;
+.footerarrange .footright {
+  flex: 40%;
   padding-top: 25px;
 }
 
-.footercenter {
-  -webkit-box-flex: 30%;
-      -ms-flex: 30%;
-          flex: 30%;
+.footerarrange .footercenter {
+  border-left: 2px solid #007E85;
+  border-right: 2px solid #007E85;
+  flex: 20%;
 }
 
-.footercenter img {
+.footerarrange .footercenter a img {
   display: block;
   margin: 0 auto;
+  width: 120px;
 }
 
-.footerright {
-  -webkit-box-flex: 35%;
-      -ms-flex: 35%;
-          flex: 35%;
+.footerarrange .footerright {
+  flex: 40%;
   padding-top: 25px;
 }
 
-.footer_icon img {
+.footerarrange .footerright .link {
+  margin-left: 20px;
+}
+
+.footerarrange .footerright .link .footer_icon img {
   width: 40px;
   margin: 0 10px;
 }
@@ -322,8 +322,24 @@ a {
 }
 
 @media screen and (max-width: 767px) {
-  .footright, .footercenter {
+  .footerarrange .footright {
     display: none;
+  }
+  .footerarrange .footercenter {
+    display: none;
+  }
+  .footerarrange .footerright {
+    padding: 0px;
+  }
+  .footerarrange .footerright .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+  }
+  .footerarrange .footerright .link .footer_icon img {
+    width: 35px;
+    margin: 0 5px;
   }
 }
 
@@ -368,8 +384,6 @@ a {
 }
 
 .spot {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -427,12 +441,8 @@ a {
 }
 
 .infos {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
   text-align: center;
   padding: 10px 0 20px 0;
   border-bottom: 2px solid #C4C4C4;
@@ -476,13 +486,9 @@ a {
 }
 
 .weatherweek {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 20px auto;
   max-width: 350px;
   width: 100%;
@@ -514,8 +520,6 @@ a {
 }
 
 .popular_area {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -540,8 +544,7 @@ a {
   position: absolute;
   left: -85px;
   top: -85px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   z-index: 1;
 }
 
@@ -550,17 +553,13 @@ a {
   position: absolute;
   right: 5px;
   bottom: 50%;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .other_popular_area {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   text-align: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .other_popular_area .card img {
@@ -584,12 +583,8 @@ a {
 .currently_gruop {
   border-bottom: 2px solid #C4C4C4;
   padding: 0 0 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .currently_gruop .card {
@@ -633,20 +628,14 @@ a {
 }
 
 .introduction {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .introduction .text {
-  -webkit-box-flex: 60%;
-      -ms-flex: 60%;
-          flex: 60%;
+  flex: 60%;
 }
 
 .introduction .more_pic {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -654,9 +643,7 @@ a {
   width: 60px;
   border-radius: 5px;
   border: 1px solid red;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
+  align-self: start;
   margin: 3px;
 }
 
@@ -672,11 +659,8 @@ a {
     width: 200px;
   }
   .infos {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     text-align: center;
   }
   .weatherweek .day {
@@ -693,13 +677,10 @@ a {
     width: 350px;
   }
   .other_popular_area {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .other_popular_area .card {
-    -webkit-box-flex: 40%;
-        -ms-flex: 40%;
-            flex: 40%;
+    flex: 40%;
   }
   .other_popular_area .card:nth-child(2) {
     margin-right: 0px;
@@ -751,13 +732,10 @@ a {
     width: 100%;
   }
   .other_popular_area {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .other_popular_area .card {
-    -webkit-box-flex: 40%;
-        -ms-flex: 40%;
-            flex: 40%;
+    flex: 40%;
   }
   .other_popular_area .card:nth-child(2) {
     margin-right: 0px;
@@ -801,8 +779,7 @@ a {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .reportbtn {
@@ -913,8 +890,7 @@ a {
   position: absolute;
   left: -85px;
   top: -85px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   z-index: 1;
 }
 
@@ -923,8 +899,7 @@ a {
   position: absolute;
   right: 5px;
   bottom: 50%;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 #app .groups .group .gLeft {
@@ -937,12 +912,8 @@ a {
 
 #app .groups .group .gLeft .groupBinImg {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   height: 350px;
   margin-bottom: 30px;
   border-radius: 10px;
@@ -953,8 +924,7 @@ a {
 #app .groups .group .gLeft .groupBinImg img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 #app .groups .group .gLeft .maphashtag {
@@ -982,12 +952,8 @@ a {
 }
 
 #app .groups .group .gRight .headLine {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 #app .groups .group .gRight .headLine H3 {
@@ -1054,15 +1020,9 @@ a {
 }
 
 #app .groups .group .gRight .aboutPepole {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #app .groups .group .gRight .aboutPepole .right {
@@ -1288,8 +1248,7 @@ a {
 .mainbtn1:active {
   top: 3px;
   left: 3px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .mainbtn2 {
@@ -1313,8 +1272,7 @@ a {
 .mainbtn2:active {
   top: 3px;
   left: 3px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .secondbtn1 {
@@ -1338,8 +1296,7 @@ a {
 .secondbtn1:active {
   top: 3px;
   left: 3px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .secondbtn2 {
@@ -1363,8 +1320,7 @@ a {
 .secondbtn2:active {
   top: 3px;
   left: 3px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .thirdbtn1_green {
