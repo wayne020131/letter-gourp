@@ -781,6 +781,299 @@ a {
   }
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.reportbtn {
+  background-color: #FFFFFF;
+  color: #00A5A3;
+  padding: 0 10px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 8px;
+  border-color: #00A5A3;
+  font-weight: bold;
+}
+
+#app .section1 {
+  padding-bottom: 90px;
+}
+
+#app .section1 .level11 {
+  font-weight: bold;
+}
+
+#app .breadcrumbs ul {
+  text-align: left;
+  padding: 45px 0;
+  height: auto;
+}
+
+#app .breadcrumbs ul li {
+  margin: 0px;
+  line-height: auto;
+  height: auto;
+}
+
+#app .breadcrumbs ul li a {
+  font-weight: bold;
+}
+
+#app .breadcrumbs ul li a:hover {
+  color: #00A5A3;
+}
+
+#app .breadcrumbs ul li::after {
+  content: ">";
+  color: #007E85;
+  margin: 10px;
+}
+
+#app .breadcrumbs ul li:last-child::after {
+  content: "";
+}
+
+#app .groupMain .nav {
+  display: inline-block;
+  width: 243px;
+  margin-right: 30px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+}
+
+#app .groupMain .nav .level7 {
+  margin: 0 0 20px;
+}
+
+#app .groupMain .nav .serchGroup {
+  padding: 10px 0;
+  border-top: 1px solid #626262;
+}
+
+#app .groupMain .nav .serchGroup label {
+  display: block;
+  margin: 10px;
+  width: 100%;
+}
+
+#app .groupMain .nav .serchGroup select {
+  display: block;
+  margin: 10px;
+  height: 30px;
+  width: 150px;
+  border-radius: 5px;
+}
+
+#app .groupMain .nav .serchGroup:nth-child(2) {
+  border-top: 0px solid #626262;
+}
+
+#app .groups {
+  display: inline-block;
+  vertical-align: top;
+  width: calc( 100% - 277px);
+}
+
+#app .groups .group {
+  background-color: #FFFFFF;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 550px;
+  padding: 30px;
+  position: relative;
+}
+
+#app .groups .group .hot {
+  background-color: #F85619;
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  left: -85px;
+  top: -85px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 1;
+}
+
+#app .groups .group .hot p {
+  font-size: 16px;
+  position: absolute;
+  right: 5px;
+  bottom: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#app .groups .group .gLeft {
+  width: 40%;
+  margin-right: 40px;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+}
+
+#app .groups .group .gLeft .groupBinImg {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 350px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+#app .groups .group .gLeft .groupBinImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#app .groups .group .gLeft .maphashtag {
+  margin: 30px 0;
+}
+
+#app .groups .group .gLeft .maphashtag input {
+  margin-right: 15px;
+}
+
+#app .groups .group .gLeft .mainbtn1 {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+#app .groups .group .gRight {
+  display: inline-block;
+  width: calc(100% - 40% - 45px);
+  vertical-align: top;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#app .groups .group .gRight .headLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#app .groups .group .gRight .headLine H3 {
+  margin: 0;
+  vertical-align: top;
+  display: inline-block;
+  line-height: 28px;
+}
+
+#app .groups .group .gRight .headLine .smallInfo {
+  text-align: right;
+  display: inline-block;
+}
+
+#app .groups .group .gRight .headLine .smallInfo H6 {
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+
+#app .groups .group .gRight p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 30px;
+}
+
+#app .groups .group .gRight .poster_inform {
+  border: 1px solid #007E85;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#app .groups .group .gRight .poster_inform .poster {
+  margin: 0 10px;
+  padding: 0 10px;
+}
+
+#app .groups .group .gRight .poster_inform .inform_block .inform_pic {
+  vertical-align: middle;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+#app .groups .group .gRight .poster_inform .inform_block .inform_pic img {
+  width: 100%;
+}
+
+#app .groups .group .gRight .poster_inform .inform_block .inform_text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+#app .groups .group .gRight .poster_inform .inform_block .inform_text p {
+  margin: 0;
+}
+
+#app .groups .group .gRight .info {
+  height: 70px;
+  overflow: hidden;
+}
+
+#app .groups .group .gRight .aboutPepole {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app .groups .group .gRight .aboutPepole .right {
+  width: calc(100% / 2);
+  text-align: center;
+}
+
+#app .groups .group .gRight .aboutPepole .right .note {
+  color: #F85619;
+}
+
+#app .groups .group .gRight .equthing {
+  margin: 0 0 25px;
+}
+
+#app .groups .group .gRight .equthing .equ {
+  display: inline-block;
+  margin: 0;
+}
+
+#app .groups .group .gRight .equthing button {
+  margin-right: 15px;
+}
+
+#app .groups .group .gRight .more {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 .level0 {
   font-size: 14px;
   line-height: 20px;
