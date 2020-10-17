@@ -55,23 +55,7 @@
                             <div class="search_area">
                             <div id="app"></div>
                             <component :is="Select"></component>
-                                <!-- <p>
-                                    <label class="third_title" for="">選擇地區:</label>
-                                    <select name="" id="" placeholder="--請選擇--">
-                                        <option value="1">北</option>
-                                        <option value="2">中</option>
-                                        <option value="3">南</option>
-                                        <option value="4">東</option>
-                                    </select>
-                                </p>
-                                <p>
-                                    <label class="third_title" for="">選擇營地:</label>
-                                    <select name="" id="">
-                                        <option value="">新北市</option>
-                                        <option value="">桃園市</option>
-                                        <option value="">新竹縣</option>
-                                    </select>
-                                </p> -->
+
                             </div>
                             
                             <!-- 溫度、降雨、濕度 -->
@@ -259,8 +243,8 @@
         var map;
 
         map =L.map('map', {
-                center: [24.0766317,120.9852215], // 中心點座標
-                zoom: 10, // 0 - 18
+                center: [ 24.926455,121.526396], // 中心點座標
+                zoom: 12, // 0 - 18
                 attributionControl: true, // 是否秀出「leaflet」的貢獻標記
                 zoomControl: true , // 是否秀出 - + 按鈕
                 });
@@ -268,9 +252,9 @@
 
 
         //建立地標
-        var marker = L.marker([24.0766317,120.9852215]);
+        var marker = L.marker([ 24.926455,121.526396]);
         marker.addTo(map);
-        marker.bindPopup("<a href=''><img src='https://picsum.photos/160/120?random=1'></a><br> <a href=''>南投仁愛樹不老露營區</a><br>目前開團:2組");
+        marker.bindPopup("<a href=''><img src='https://picsum.photos/160/120?random=1'></a><br> <a href='camping2.html'>確幸莊園</a><br>目前開團:2組");
         
 
         //讀取 GeoJSON，加入行政區邊界
@@ -287,68 +271,75 @@
     <script src="https://unpkg.com/jquery"></script>
 
 
-<!-- vue -->
-<script>
-    Vue.component('Select', {
-        props: ['value', 'options', 'label'],
-        computed: {
-        index: {
-            get() {
-            return this.value;
+    <script src="cities.js"></script>
+    <script>
+
+        Vue.component('Select', {
+            props: ['value', 'options', 'label'],
+            computed: {
+            index: {
+                get() {
+                return this.value;
+                },
+                set(val) {
+                this.$emit("input", val);
+                }
+            }
             },
-            set(val) {
-            this.$emit("input", val);
+            methods: {
+            optionText(item) {    	
+                if( this.label === 'text' ) {
+                return item["text"];
+                }
+                else {
+                return eval("item." + this.label);
+                }
+                
             }
-        }
-        },
-        methods: {
-        optionText(item) {    	
-            if( this.label === 'text' ) {
-            return item["text"];
-            }
-            else {
-            return eval("item." + this.label);
-            }
-            
-        }
-        },
-        template: 
-        `  	
-        <select v-model="index">    	
-            <option v-for="(item, index) in options" :value="index">{{optionText(item)}}</option>
-        </select>    	
-        `
-    });
+            },
+            template: 
+            `  	
+            <select v-model="index">    	
+                <option v-for="(item, index) in options" :value="index">{{optionText(item)}}</option>
+            </select>    	
+            `
+        });
 
-    new Vue({
-        el: "#app",
-        data: {
-        cityIndex: 0,
-        areaIndex: 0,
-        },
-        watch: {
-        areaIndex() {
-            this.cityIndex = 0;
-        }
-        },
-        computed: {
-        areas() {
-            return spots;
-        },
-        cities() {
-            return spots[this.areaIndex].city;
-        },
+        new Vue({
+            el: "#app",
+            data: {
+            cityIndex: 0,
+            areaIndex: 0,
+            },
+            watch: {
+            areaIndex() {
+                this.cityIndex = 0;
+            }
+            },
+            computed: {
+            areas() {
+                return spots;
+            },
+            cities() {
+                return spots[this.areaIndex].city;
+            },
 
-        },
-        template: 
-        `
-        <div>
-            地區<Select v-model="areaIndex" :options="spots" label="area"></Select>
-            縣市<Select v-model="cityIndex" :options="cities" label="text"></Select>
-            <div>{{ this.areaIndex }} - {{ this.cityIndex }} </div>
-        </div>
-        `,
-    });
-</script>
+            },
+            template: 
+            `
+            <div>
+            <p>
+                <label class="third_title" for="">選擇地區:</label>
+                <Select v-model="areaIndex" :options="spots" label="area" ></Select>
+            </p>
+            <p>
+                <label class="third_title" for="">選擇營地:</label>
+                <Select v-model="cityIndex" :options="cities" label="text"></Select>
+                </p>
+                <div>{{ this.areaIndex }} - {{ this.cityIndex }} </div>
+            </div>
+            `,
+        });
+    </script>
 </body>
 </html>

@@ -378,6 +378,10 @@ a {
   margin-left: 20px;
 }
 
+.leaflet-popup-content-wrapper {
+  width: 200px;
+}
+
 .weather {
   padding: 0 20px 0 0;
 }
