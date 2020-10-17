@@ -211,9 +211,18 @@
 
 
     <script src="https://unpkg.com/jquery"></script>
-
-
     <script src="cities.js"></script>
+    <script>
+        $(function(){
+            
+            // hamburger icon 的切換
+            $("button.hamburger").on("click", function(){
+                $(this).toggleClass("is-active");
+                $('.nav_list').slideToggle();
+    
+                });
+            });
+    </script>
     <script>
 
         Vue.component('Select', {

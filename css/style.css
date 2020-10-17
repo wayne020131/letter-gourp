@@ -112,6 +112,7 @@ table {
  * @link https://github.com/jonsuh/hamburgers
  */
 .hamburger {
+  outline: none;
   padding: 15px 15px;
   display: inline-block;
   cursor: pointer;
@@ -1283,15 +1284,6 @@ header div.nav_logo a.logo_link.-up {
     display: block;
     position: absolute;
   }
-  .forphone > a {
-    display: block;
-    position: absolute;
-    right: 5%;
-    top: 20px;
-  }
-  .nav_logo img.desk {
-    display: none;
-  }
   .nav_logo img.phone {
     display: inline-block;
   }
@@ -1313,6 +1305,28 @@ header div.nav_logo a.logo_link.-up {
     left: 50%;
     transform: translateX(-50%);
     display: inline-block;
+  }
+  .nav_list {
+    border: 1px solid transparent;
+    display: none;
+    width: 100%;
+    position: relative;
+    margin: 0 auto 70px;
+  }
+  .nav_list ul {
+    display: block;
+    margin: 0;
+    background-color: #F3F8F4;
+  }
+  .nav_list ul li {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .nav_list ul li:nth-child(3) {
+    margin-right: 0px;
+  }
+  .nav_list ul li:nth-child(4) {
+    margin-left: 0px;
   }
 }
 

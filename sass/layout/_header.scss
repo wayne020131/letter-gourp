@@ -183,16 +183,9 @@ header{
     display: block;
     position: absolute;
 }
-.forphone>a{
-    display: block;
-    position: absolute;
-    right: 5%;
-    top: 20px;
-}
-.nav_logo img.desk {
-    display: none;
-}
+
 .nav_logo img.phone {
+    // border: 1px solid red;
     display: inline-block;
 }
 header div.nav_logo a.logo_link.-up{
@@ -213,6 +206,28 @@ header div.nav_logo div.middle_bg{
         left: 50%;
         transform: translateX(-50%);
         display: inline-block;
+    }
+    .nav_list{
+        border: 1px solid transparent;
+        display: none;
+        width: 100%;
+        position: relative;
+        margin: 0 auto 70px;
+        ul{
+            display: block;
+            margin: 0;
+            background-color: $greenColor4;
+            li{
+                width: 100%;
+                margin: 0 auto;
+            }
+            li:nth-child(3){
+                margin-right: 0px;
+            }
+            li:nth-child(4){
+                margin-left: 0px;
+            }
+        }
     }
 }
 @media screen and (max-width: 576px){
