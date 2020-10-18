@@ -5,21 +5,24 @@
     background-color: white;
     border-radius: 10px;
     padding:20px;
-    margin: 10px 0 20px;
+    margin: 0px 0px 20px 0px;
 }
 //麵包穴
 .section1{
     .breadcrumbs{
         ul{
             text-align: left;
+            padding: 30px 0;
             height: auto;
             
             li{
+                display: inline-block;
                 margin: 0px;
                 line-height: auto;
                 height: auto;
                 a{
                     font-weight:bold;
+                    text-decoration: none;
                     &:hover{
                         color: $greenColor3;
                     }
@@ -36,6 +39,9 @@
         }
     }
 }
+
+
+
 .spot{
     display: flex;
 }
@@ -49,8 +55,6 @@
     max-width: 900px;
     width: 100%;
     margin-left:20px ;
-    // border: 1px solid red;
-    
 }
 //地圖的tooltip
 .leaflet-popup-content-wrapper{
@@ -174,6 +178,7 @@
         padding-right: 20px;
         img{
             width: 400px;
+            border-radius: $radius;
         }
     }
 
@@ -210,6 +215,7 @@
             img{
                 max-width: 250px;
                 width: 100%;
+                border-radius: $radius;
             }
         }
     }
@@ -240,11 +246,14 @@
             max-width: 350px;
             width: 100%;
         }
-        .detail{
-            text-align: right;
-            button{
-                display:inline-block;
-                margin: 5px;
+        .text{
+            padding: 3px;
+            .detail{
+                text-align: right;
+                button{
+                    display:inline-block;
+                    margin: 5px;
+                }
             }
         }
     }
@@ -264,35 +273,50 @@
 //------------------------------------------------------------
 //camping2
 .location{
-    .collect{
+    .titlearea{
         button{
             float: right;
         }
     }
     .big_pic{
         width: 100%;
+        border-radius: 5px;
+    }
+    .introduction{
+        padding: 5px 0px;
     }
 }
-.introduction{
-    display: flex; 
-    .text{
-        flex: 60%;
-    }
-    .more_pic{
+
+//營地資訊
+.location_inf{
+    .content{
         display: flex;
-        .small_pic{
-            width: 60px;
-            border-radius: 5px;
-            border: 1px solid red;
-            align-self: start;
-            margin: 3px;
+        justify-content: space-around;
+        .location_map{
+            flex-basis: 55%;
+            img{
+                max-width: 660px;
+                width: 100%;
+                border-radius: $radius;
+            }
+        }
+        .location_text{
+            flex-basis: 40%;
+            .text{
+                padding-bottom: 5px;
+            }
+        }
+    }
+    .note{
+        border: 1px solid $greenColor1;
+        border-radius: $radius;
+        padding: 10px;
+        margin:10px 10px 0px 10px;
+        .text{
+            text-align: center;
         }
     }
 }
-.small_pic{
-    width: 60px;
-}
-
 //rwd
 @media screen and (min-width: 768px) and (max-width: 991px){
     .search_area{
@@ -418,6 +442,31 @@
         }
         .card:nth-child(3){
             margin: 0 auto;
+        }
+    }
+    //營區介紹-營區資訊
+    .location_inf{
+        .content{
+            display: block;
+            .location_map{
+                img{
+                }
+            }
+            .location_text{
+                padding: 10px;
+                .text{
+                    // padding-bottom: 5px;
+                }
+            }
+        }
+        .note{
+            border: 1px solid $greenColor1;
+            border-radius: $radius;
+            padding: 10px;
+            margin:10px 10px 0px 10px;
+            .text{
+                text-align: center;
+            }
         }
     }
 }
