@@ -18,6 +18,11 @@
         let firstStepText = stepTitle[stepControl];
         let firstRightContent = document.getElementById('rightStep1');
         let contentList = document.querySelectorAll('.stylePostcard');
+        let paper1 = document.getElementById('paper1');
+        let paper2 = document.getElementById('paper2');
+        let paper3 = document.getElementById('paper3');
+        let paperList = document.querySelectorAll('.postcardPaper');
+        
         
         
         
@@ -35,6 +40,12 @@
         //建立事件玲聽
         previousStep.addEventListener('click',changeStepBack);
         nextStep.addEventListener('click',changeStepNext);
+        for(let i =0;i < paperList.length;i++){
+            paperList[i].addEventListener('click',function(){
+                let paperPassId = this.id;
+                paperBackground(paperPassId);
+            });
+        }
         
         
         //函式區
@@ -84,6 +95,16 @@
                 stepControl -=1;
             }
         }
+        function paperBackground(paperNowId){
+            document.getElementsByClassName('postcard')[0].style.backgroundImage = `url("./postcardMaterial/paper/${paperNowId}.png")`;
+            document.getElementsByClassName('pdContentImg')[0].style.display = "block";
+            document.getElementsByClassName('pdContentImg')[0].style.backgroundImage =`url("./postcardMaterial/paper/${paperNowId}.png")`;
+
+        }
+
+
+
+
     }
     window.addEventListener('load',doFirst);
 </script>
@@ -161,17 +182,23 @@
                         <div class="stylePostcard" id="rightStep1">                            
                             <div class="paperTexture">
                                 <p>水印墨綠</p>
-                                <div class='posBackground'></div>
+                                <div class='posBackground'>
+                                    <img class="postcardPaper" id="paper1" src="./postcardMaterial/paper/paper1.png">
+                                </div>
                             </div>
                             
                             <div class="paperTexture">
                                 <p>淡點米黃</p>
-                                <div class='posBackground'></div>
+                                <div class='posBackground'>
+                                    <img class="postcardPaper" id="paper2" src="./postcardMaterial/paper/paper2.png">
+                                </div>
                             </div>
                             
                             <div class="paperTexture">
                                 <p>格線粉紅</p>
-                                <div class='posBackground'></div>
+                                <div class='posBackground'>
+                                    <img class="postcardPaper" id="paper3" src="./postcardMaterial/paper/paper3.png">
+                                </div>
                             </div>
                         </div>
                         <div class="stylePostcard" id="rightStep2">
