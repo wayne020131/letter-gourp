@@ -57,6 +57,35 @@ table {
   border-spacing: 0;
 }
 
+.collect_checkbox label {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px 20px 0 10px;
+  color: #FC8F24;
+}
+
+.collect_checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.collect_checkbox input[type="checkbox"] + label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-image: url("../../pic/icon/like.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: translate(0, -1px);
+          transform: translate(0, -1px);
+}
+
+.collect_checkbox input[type="checkbox"]:checked + label::before {
+  background-image: url("../../pic/icon/like_check.png");
+}
+
 .search_input {
   font-size: 0;
   width: 360px;
@@ -2112,7 +2141,7 @@ header div.nav_logo a.logo_link.-up {
   margin: 20px auto 10px;
 }
 
-.location .titlearea button {
+.location .titlearea .like {
   float: right;
 }
 
