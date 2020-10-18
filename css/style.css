@@ -480,12 +480,17 @@ select {
   margin-right: 15px;
   width: 840px;
   height: 560px;
+  position: relative;
 }
 
 .wrap .postcard_content .postcard .pdContentImg {
-  width: 5%;
-  height: 5%;
+  width: 8%;
   position: absolute;
+  bottom: 3%;
+  left: 45%;
+  border: 1px solid;
+  border-radius: 50%;
+  padding: 15px 25px 15px 25px;
 }
 
 .wrap .postcard_content .postcard .putPhoto {
