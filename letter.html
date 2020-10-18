@@ -22,10 +22,10 @@
         
         
         //預設內容
-        firstRightContent.style.display ='block';
+        firstRightContent.style.display ='flex';
         stepTitleSelect.innerText = firstStepText;
-        previousStep.classList.remove('secondbtn2');
-        previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3;width: 120px; height: 45px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:3px; font-weight: bold; position: relative;")
+        previousStep.classList.remove('thirdbtn2_green');
+        previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3; padding: 0 15px;  height: 40px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:2px; font-weight: bold;");
         document.getElementById(`cardStep${stepControl+1}`).className = "chooseCardStep";
 
 
@@ -41,13 +41,13 @@
         function changeStepBack(){
             stepControl-=1;
             if(stepControl==0){
-                previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3;width: 120px; height: 45px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:3px; font-weight: bold; position: relative;")
-                previousStep.classList.remove('secondbtn2');
+                previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3; padding: 0 15px;  height: 40px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:2px; font-weight: bold;");
+                previousStep.classList.remove('thirdbtn2_green');
                 let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
                 let nowRightNum =  nowStepNum+1;
                 document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
                 stepTitleSelect.innerText =stepTitle[stepControl];
-                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'block';
+                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'flex';
                 document.getElementById(`cardStep${nowRightNum}`).className = "cardStep";
                 document.getElementById(`cardStep${nowRightNum-1}`).className = "chooseCardStep";
                 
@@ -58,7 +58,7 @@
                 document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
                 document.getElementById(`cardStep${nowRightNum}`).className = "cardStep";
                 stepTitleSelect.innerText =stepTitle[stepControl];
-                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'block';
+                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'flex';
                 document.getElementById(`cardStep${nowRightNum-1}`).className = "chooseCardStep";
             }else if(stepControl<0){
                 stepControl+=1;
@@ -68,7 +68,7 @@
             stepControl+=1;
             if(stepTitle.length>stepControl>0){
                 previousStep.removeAttribute('style');
-                previousStep.classList.add('secondbtn2');
+                previousStep.classList.add('thirdbtn2_green');
             let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
             let nowRightNum =  nowStepNum+1;
                 if(nowStepNum<stepTitle.length-1){
@@ -76,7 +76,7 @@
                     document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
                     document.getElementById(`cardStep${nowRightNum}`).className = "cardStep";
                     stepTitleSelect.innerText =stepTitle[stepControl];
-                    document.getElementById(`rightStep${nowRightNum+1}`).style.display = 'block';
+                    document.getElementById(`rightStep${nowRightNum+1}`).style.display = 'flex';
                     document.getElementById(`cardStep${nowRightNum+1}`).className = "chooseCardStep";
                     
                 }
@@ -147,23 +147,30 @@
                 
             </div>
             <div class="postcard_content">
-                <main class="postcard"></main>
+                <main class="postcard">
+                    <div class="pdContentImg">
+                        <img class="postcardLogo" src="./postcardMaterial/LOGO/logoUse.svg">
+                    </div>
+                    <div class="putPhoto">
+                        
+                    </div>
+                </main>
                 <div class="rightPostcard">
                     <div class="rightPostcard_aside">
-                        <p class="level5 topStepText" id="stepTitleName">選擇材質|選擇照片|增加插圖|輸入內文|填寫收件人|分享社群</p>
+                        <p class="level4 topStepText" id="stepTitleName">選擇材質|選擇照片|增加插圖|輸入內文|填寫收件人|分享社群</p>
                         <div class="stylePostcard" id="rightStep1">                            
                             <div class="paperTexture">
-                                <p>墨印淺棕</p>
+                                <p>水印墨綠</p>
                                 <div class='posBackground'></div>
                             </div>
                             
                             <div class="paperTexture">
-                                <p >星空燦爛</p>
+                                <p>淡點米黃</p>
                                 <div class='posBackground'></div>
                             </div>
                             
                             <div class="paperTexture">
-                                <p>懷舊格線</p>
+                                <p>格線粉紅</p>
                                 <div class='posBackground'></div>
                             </div>
                         </div>
@@ -198,8 +205,8 @@
                             <div class="pictureChoose">20</div>
                         </div>
                         <div class="stepContent">
-                            <button class="secondbtn2" id="previousStep" >上一步</button>
-                            <button class="secondbtn2" id="nextStep" >下一步</button>
+                            <button class="thirdbtn2_green" id="previousStep" >上一步</button>
+                            <button class="thirdbtn2_green" id="nextStep" >下一步</button>
                         </div>
                     </div>
                 </div>

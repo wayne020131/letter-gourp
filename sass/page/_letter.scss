@@ -2,7 +2,7 @@
     .stepBreadcrumbs{
         display: flex;
         justify-content: space-between;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         margin-bottom: 3%;
         .cardStep{
@@ -24,33 +24,76 @@
     }
     .postcard_content{
         display: flex;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
+        
         .postcard{
-            flex: 0 1 65%;
             border: 1px solid red;
             margin-right: 15px;
-           
+            width: 840px;
+            height: 560px;
+            .pdContentImg{
+                width: 5%;
+                height: 5%;
+                position: absolute;
+                .postcardLogo{
+
+                }
+            }
+
+            .putPhoto{
+                width: 96%;
+                border: 1px solid green;
+                height: 85%;
+                margin: 0 auto;
+                margin-top: 2%;
+            }
         }
         .rightPostcard{
-            flex: 25%;
             border: 1px solid blue;
+            width: 287px;
+            height: 560px;
+            background-image: url("../../postcardMaterial/leftBackground.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
             p{
                 text-align: center;
-                margin-top: 5%;
-                background-color: $greenColor3;
-                line-height: 60px;
+                margin-top: 10%;
+                padding-top: 5px;
+                padding-bottom: 5px;
             }
             .stylePostcard{
                 display: none;
-                p{
-                    text-align: center;
-                    background-color: white;
+                flex-direction: column;
+                height: 400px;
+                justify-content: space-around;
+                align-items: center;
+                width: 90%;
+                margin: 0 auto;
+                
+                .paperTexture{
+                    border: 1px solid red;
+                    height: 30%;
+                    width: 100%;
+                    
+                    p{
+                        text-align: center;
+                        margin-top: 0%;
+                        margin-bottom: 6%;
+                    }
+                    .posBackground{
+                        border: 1px solid;
+                        width: 60%;
+                        height: 50%;
+                        margin: 0 auto;
+                    }
                 }
             }
             .stepContent{
                 display: flex;
-                justify-content: space-around;
+                justify-content: space-evenly;
+                margin: 0 auto;
+                width: 90%;
                 .stepHover{
                     background-color: #FFFFFF;
                     color: #00A5A3;
