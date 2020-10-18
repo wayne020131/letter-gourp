@@ -1,0 +1,171 @@
+#app{
+    width: 1140px;
+    // border: 1px solid red;
+    display: flex;
+    padding-bottom: 50px;
+}
+// 側邊欄
+.app_left_aside{
+    width: 30%;
+    background-color: white;
+}
+.buttonClassification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+}
+.buttonClassification > button{
+    cursor: pointer; 
+    width: 100px;
+    margin-left: 16px;
+}
+.app_left_aside p{
+    margin: 32px 0 32px 10px;
+}
+.imgSize{ //左側圖片大小
+    width: 60px;
+}
+
+//主要顯示
+//會員資訊標題
+.app_right_aside{
+    width: 70%;
+    padding: 14px;
+    background-color: white;
+}
+.memberTitle_img{
+    width: 60px;
+}
+.member_image{
+    text-align: center;
+    margin: 36px 0;
+}
+.member_image > img, .member_imageButton{
+    display: inline-block;
+}
+.member_image > img{
+    border-radius: 50%;
+}
+.member_imageButton > button{
+    cursor: pointer; 
+}
+.member_information_main{
+    margin: 0 auto;
+    width: 50%;
+}
+.member_information_main p{
+    margin: 16px 0;
+}
+.member_information_main p span{
+    margin-left: 16px;
+}
+.edit_block{
+    text-align: center;
+}
+.edit_block > button{
+    cursor: pointer; 
+}
+
+//揪團露營
+.startGroupManage_page > ul{
+    padding: 16px;
+}
+.group_everyRow{
+    display: flex;
+    height: 150px;
+}
+.group_everyRow img{
+    width: 200px;
+}
+.group_everyRow ul{
+    line-height: 0;
+    height: auto;
+    font-size: 0;
+    display: block;
+}
+.group_everyRow ul li{
+    margin: 0;
+}
+
+//登入頁
+
+body{background-image:url(BG002.gif);} 
+
+#lightBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #AFDCDE;
+    .login_container{
+        max-width: 600px;
+        width: 100%;
+        max-height: 450px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        .login_block_left{
+            width: 50%;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            border-radius: 20px 0px 0px 20px;
+            tr{
+                td{
+                    padding-left: 10px;
+                    label{
+                        span:hover{
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                
+            }
+            
+        }
+        .login_block_right{
+            width: 50%;
+            height: 450px;
+            position: absolute;
+            top:0;
+            right: 0;
+            margin: auto;
+            background-color:white;
+            border-radius: 0px 20px 20px 0px;
+            tr{
+                td{
+                    label{
+                        span:hover{
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .login_block_mid{
+            width: 300px;
+            height: 450px;
+            position: absolute;
+            border-radius:20px;
+            overflow: hidden;
+                img{
+                    width: 300px;
+                    height: 450px;
+                }
+        }
+    }
+}
+
+
+    #login_img_control:checked~ .login_container .login_block_mid {
+    transform: translateX(-300px);
+    transition: 0.5s;
+    }
+    .login_block_mid {
+        transform: translateX(300px);
+        transition: 0.5s;
+    }
