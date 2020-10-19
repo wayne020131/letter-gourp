@@ -7,6 +7,107 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./hamburgers-master/dist/hamburgers.css">
 </head>
+<script>
+    function doFirst(){
+        //建立變數
+        let stepTitleSelect = document.getElementById('stepTitleName');
+        let previousStep = document.getElementById('previousStep');
+        let nextStep = document.getElementById('nextStep');
+        let stepTitle = stepTitleSelect.innerText.split('|');
+        let stepControl = 0;
+        let firstStepText = stepTitle[stepControl];
+        let firstRightContent = document.getElementById('rightStep1');
+        let contentList = document.querySelectorAll('.stylePostcard');
+        let paper1 = document.getElementById('paper1');
+        let paper2 = document.getElementById('paper2');
+        let paper3 = document.getElementById('paper3');
+        let paperList = document.querySelectorAll('.postcardPaper');
+        
+        
+        
+        
+        //預設內容
+        firstRightContent.style.display ='flex';
+        stepTitleSelect.innerText = firstStepText;
+        previousStep.classList.remove('thirdbtn2_green');
+        previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3; padding: 0 15px;  height: 40px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:2px; font-weight: bold;");
+        document.getElementById(`cardStep${stepControl+1}`).className = "chooseCardStep";
+
+
+        
+        
+
+        //建立事件玲聽
+        previousStep.addEventListener('click',changeStepBack);
+        nextStep.addEventListener('click',changeStepNext);
+        for(let i =0;i < paperList.length;i++){
+            paperList[i].addEventListener('click',function(){
+                let paperPassId = this.id;
+                paperBackground(paperPassId);
+            });
+        }
+        
+        
+        //函式區
+        function changeStepBack(){
+            stepControl-=1;
+            if(stepControl==0){
+                previousStep.setAttribute("style","background-color: #FFFFFF; color: #00A5A3; padding: 0 15px;  height: 40px; font-size: 16px; border-radius: 8px; border-color: #00A5A3;  border-width:2px; font-weight: bold;");
+                previousStep.classList.remove('thirdbtn2_green');
+                let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+                let nowRightNum =  nowStepNum+1;
+                document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
+                stepTitleSelect.innerText =stepTitle[stepControl];
+                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'flex';
+                document.getElementById(`cardStep${nowRightNum}`).className = "cardStep";
+                document.getElementById(`cardStep${nowRightNum-1}`).className = "chooseCardStep";
+                
+            }else if(stepControl>0){
+                
+                let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+                let nowRightNum =  nowStepNum+1;
+                document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
+                document.getElementById(`cardStep${nowRightNum}`).className = "cardStep";
+                stepTitleSelect.innerText =stepTitle[stepControl];
+                document.getElementById(`rightStep${nowRightNum-1}`).style.display = 'flex';
+                document.getElementById(`cardStep${nowRightNum-1}`).className = "chooseCardStep";
+            }else if(stepControl<0){
+                stepControl+=1;
+            }
+        }
+        function changeStepNext(){
+            stepControl+=1;
+            if(stepTitle.length>stepControl>0){
+                previousStep.removeAttribute('style');
+                previousStep.classList.add('thirdbtn2_green');
+            let nowStepNum = stepTitle.indexOf(stepTitleSelect.innerText);
+            let nowRightNum =  nowStepNum+1;
+                if(nowStepNum<stepTitle.length-1){
+                    
+                    document.getElementById(`rightStep${nowRightNum}`).style.display = 'none';
+                    document.getElementById(`cardStep${nowRightNum}`).className = "cardStep";
+                    stepTitleSelect.innerText =stepTitle[stepControl];
+                    document.getElementById(`rightStep${nowRightNum+1}`).style.display = 'flex';
+                    document.getElementById(`cardStep${nowRightNum+1}`).className = "chooseCardStep";
+                    
+                }
+            }else{
+                stepControl -=1;
+            }
+        }
+        function paperBackground(paperNowId){
+            document.getElementsByClassName('postcard')[0].style.backgroundImage = `url("./postcardMaterial/paper/${paperNowId}.png")`;
+            document.getElementsByClassName('pdContentImg')[0].style.display = "block";
+            document.getElementsByClassName('pdContentImg')[0].style.backgroundImage =`url("./postcardMaterial/paper/${paperNowId}.png")`;
+
+        }
+
+
+
+
+    }
+    window.addEventListener('load',doFirst);
+</script>
 <body>
     <header >
         <div class="forphone">
@@ -36,17 +137,106 @@
         </nav>
     </header>
 
-    <section class="section1 bgcColor">
+    <section class="section1">
         <div class="wrap">
-            <div class="title">
-                內容寫在這裡1
+            <div class="stepBreadcrumbs">
+                
+                    <div class="cardStep" id="cardStep1">
+                        <p class="level2">STEP1</p>  
+                        <p class="level2">選擇材質</p>
+                    </div>
+                    <div class="cardStep" id="cardStep2">
+                        <p class="level2">STEP2</p>
+                        <p class="level2">上傳照片</p></p>
+                    </div>
+                    <div class="cardStep" id="cardStep3">
+                        <p class="level2">STEP3</p>
+                        <p class="level2">增加插圖</p>
+                    </div>
+                    <div class="cardStep" id="cardStep4">
+                        <p class="level2">STEP4</p>
+                        <p class="level2">輸入內文 </p>
+                    </div>
+                    <div class="cardStep" id="cardStep5">
+                        <p class="level2">STEP5</p>
+                        <p class="level2">寄給朋友</p></p>
+                    </div>
+                    <div class="cardStep" id="cardStep6">
+                        <p class="level2">STEP6</p>
+                        <p class="level2">分享社群</p></p>
+                    </div>
+                
             </div>
-        </div>
-    </section>
-    <section class="bgcColor">
-        <div class="wrap">
-            <div class="title">
-                內容寫在這裡2
+            <div class="postcard_content">
+                <div class="postcard">
+                    <div class="pdContentImg">
+                        <img class="postcardLogo" src="./postcardMaterial/LOGO/logoUse.svg">
+                    </div>
+                    <div class="putPhoto">
+                        
+                    </div>
+                </div>
+                <div class="rightPostcard">
+                    <div class="rightPostcard_aside">
+                        <p class="level4 topStepText" id="stepTitleName">選擇材質|選擇照片|增加插圖|輸入內文|填寫收件人|分享社群</p>
+                        <div class="stylePostcard" id="rightStep1">                            
+                            <div class="paperTexture">
+                                <p>水印墨綠</p>
+                                <div class='posBackground'>
+                                    <img class="postcardPaper" id="paper1" src="./postcardMaterial/paper/paper1.png">
+                                </div>
+                            </div>
+                            
+                            <div class="paperTexture">
+                                <p>淡點米黃</p>
+                                <div class='posBackground'>
+                                    <img class="postcardPaper" id="paper2" src="./postcardMaterial/paper/paper2.png">
+                                </div>
+                            </div>
+                            
+                            <div class="paperTexture">
+                                <p>格線粉紅</p>
+                                <div class='posBackground'>
+                                    <img class="postcardPaper" id="paper3" src="./postcardMaterial/paper/paper3.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep2">
+                            <div class="photoChoose">1</div>
+                            <div class="photoChoose">2</div>
+                            <div class="photoChoose">3</div>
+                            <div class="photoChoose">4</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep3">
+                            <div class="pictureChoose">5</div>
+                            <div class="pictureChoose">6</div>
+                            <div class="pictureChoose">7</div>
+                            <div class="pictureChoose">8</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep4">
+                            <div class="pictureChoose">9</div>
+                            <div class="pictureChoose">10</div>
+                            <div class="pictureChoose">11</div>
+                            <div class="pictureChoose">12</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep5">
+                            <div class="pictureChoose">13</div>
+                            <div class="pictureChoose">14</div>
+                            <div class="pictureChoose">15</div>
+                            <div class="pictureChoose">16</div>
+                        </div>
+                        <div class="stylePostcard" id="rightStep6">
+                            <div class="pictureChoose">17</div>
+                            <div class="pictureChoose">18</div>
+                            <div class="pictureChoose">19</div>
+                            <div class="pictureChoose">20</div>
+                        </div>
+                        <div class="stepContent">
+                            <button class="thirdbtn2_green" id="previousStep" >上一步</button>
+                            <button class="thirdbtn2_green" id="nextStep" >下一步</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
