@@ -127,8 +127,120 @@
     <section>
         <div class="wrap">
             <div class="title">探訪相似的揪團景點</div>
-            <div class="camping_block">
+            <div class="camping_block linl_group">
                 等可瑾
+                <div class="gPepole groupBlock moreGroups">
+                    <button class="tagbtn_yellow" id="leftBtn">&lt;</button>
+                    <div class="oGroups">
+                        <ul class="allGroup">
+    
+                            <li class="group">
+                                <div class="img">
+                                    <img src="./pic/group/G2.jpg" alt="">
+                                </div>
+                                <div class="info ">
+                                    <div class="gName level5 green1">
+                                        一起來去露營
+                                    </div>
+                                    <div class="btns">
+                                        <div class="maphashtagI maphashtag ">
+                                            <input type="submit" class="tagbtn_green" value="台中市">
+                                            <input type="submit" class="tagbtn_green" value="九甲林露營區">
+                                        </div>
+                                        <div class="more">
+                                            <a href="./groupInfo.html"><input type="submit" class="secondbtn1" value="查看詳情"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="group">
+                                <div class="img">
+                                    <img src="./pic/group/G3.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="gName level5 green1">
+                                        宇宙第一露營隊
+                                    </div>
+                                    <div class="btns">
+                                        <div class="maphashtagI maphashtag ">
+                                            <input type="submit" class="tagbtn_green" value="台中市">
+                                            <input type="submit" class="tagbtn_green" value="九甲林露營區">
+                                        </div>
+                                        <div class="more">
+                                            <a href="./groupInfo.html"><input type="submit" class="secondbtn1" value="查看詳情"></a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </li>
+    
+                                
+                            </li>
+                            <li class="group">
+                                <div class="img">
+                                    <img src="./pic/group/G3.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="gName level5 green1">
+                                        宇宙第一露營隊
+                                    </div>
+                                    <div class="btns">
+                                        <div class="maphashtagI maphashtag ">
+                                            <input type="submit" class="tagbtn_green" value="台中市">
+                                            <input type="submit" class="tagbtn_green" value="九甲林露營區">
+                                        </div>
+                                        <div class="more">
+                                            <a href="./groupInfo.html"><input type="submit" class="secondbtn1" value="查看詳情"></a>
+                                        </div>
+                                    </div>    
+                                </div>
+                                
+                            </li>
+                            <li class="group">
+                                <div class="img">
+                                    <img src="./pic/group/G3.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="gName level5 green1">
+                                        宇宙第一露營隊
+                                    </div>
+                                    <div class="btns">
+                                        <div class="maphashtagI maphashtag ">
+                                            <input type="submit" class="tagbtn_green" value="台中市">
+                                            <input type="submit" class="tagbtn_green" value="九甲林露營區">
+                                        </div>
+                                        <div class="more">
+                                            <a href="./groupInfo.html"><input type="submit" class="secondbtn1" value="查看詳情"></a>
+                                        </div>
+                                    </div>    
+                                </div>
+                                
+                            </li>
+                            <li class="group">
+                                <div class="img">
+                                    <img src="./pic/group/G3.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <div class="gName level5 green1">
+                                        宇宙第一露營隊
+                                    </div>
+                                    <div class="btns">
+                                        <div class="maphashtagI maphashtag ">
+                                            <input type="submit" class="tagbtn_green" value="台中市">
+                                            <input type="submit" class="tagbtn_green" value="九甲林露營區">
+                                        </div>
+                                        <div class="more">
+                                            <a href="./groupInfo.html"><input type="submit" class="secondbtn1" value="查看詳情"></a>
+                                        </div>
+                                    </div>    
+                                </div>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="tagbtn_yellow" id="rightBtn">&gt;</button>
+                </div>
             </div>
         </div>
     </section>
@@ -445,6 +557,67 @@
             $id('RH').innerText = AreaData.records.locations[0].location[0].weatherElement[2].time[0].elementValue[0].value + '%'
         }
 
+    </script>
+    <script>
+                $(document).ready(function(){
+
+let imgCount = $('.allGroup .group').length;
+let divWidth = $('.oGroups').width();            
+$('.allGroup').width(Math.ceil(imgCount / 2) * divWidth);
+let allwidth =(Math.ceil(imgCount / 2));
+let count=0;
+
+
+
+$('#leftBtn').click(function(){
+    if(count == 0){
+        $('#leftBtn').css('background-color', '#FFCD43');
+        $('#leftBtn').css('border-color', '#FFCD43');
+        $('#leftBtn').css('border-style', 'inset');
+    }
+    else{
+        count--; 
+        $('.allGroup').animate({
+            right: divWidth * count,
+        });
+        if(count == 0){
+            $('#leftBtn').css('background-color', '#C4C4C4');
+            $('#leftBtn').css('border-color', '#C4C4C4');
+            $('#leftBtn').css('border-style', 'solid');
+            $('#rightBtn').css('background-color', '#FFCD43');
+            $('#rightBtn').css('border-color', '#FFCD43');
+            $('#rightBtn').css('border-style', 'inset');
+        }
+
+    }
+    console.log(count);
+})
+$('#rightBtn').click(function(){
+    if(count < allwidth-1){       
+        count++;
+        $('.allGroup').animate({
+            right: divWidth * count,
+        });
+        if(count == allwidth-1){
+            $('#rightBtn').css('background-color', '#C4C4C4');
+            $('#rightBtn').css('border-color', '#C4C4C4');
+            $('#rightBtn').css('border-style', 'solid');
+        }
+        else{
+            $('#rightBtn').css('background-color', '#FFCD43');
+            $('#rightBtn').css('border-color', '#FFCD43');
+            $('#rightBtn').css('border-style', 'inset');
+        }
+        if(count != 0){
+            $('#leftBtn').css('background-color', '#FFCD43');
+            $('#leftBtn').css('border-color', '#FFCD43');
+            $('#leftBtn').css('border-style', 'inset');
+        }
+        console.log(count);
+    }
+    
+})
+});
     </script>
 </body>
 </html>
