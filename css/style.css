@@ -3562,23 +3562,24 @@ input[type="submit"], button {
 }
 
 .wrap .postcard_content .postcard {
-  border: 1px solid red;
   margin-right: 15px;
   width: 840px;
   height: 560px;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
+  background-image: url("../../pic/postcardMaterial/paper/paper1.png");
 }
 
 .wrap .postcard_content .postcard .pdContentImg {
-  width: 8%;
+  width: 15%;
   position: absolute;
   bottom: 0%;
-  left: 45%;
+  left: 43%;
   border-radius: 50%;
   padding: 15px 25px 15px 25px;
-  display: none;
+  display: block;
+  background-image: url("../../pic/postcardMaterial/paper/paper1.png");
 }
 
 .wrap .postcard_content .postcard .putPhoto {
@@ -3590,7 +3591,6 @@ input[type="submit"], button {
 }
 
 .wrap .postcard_content .rightPostcard {
-  border: 1px solid blue;
   width: 287px;
   height: 560px;
   background-image: url("../../pic/postcardMaterial/leftBackground.svg");
@@ -4379,4 +4379,3 @@ input[type="submit"], button {
 .section1 {
   padding-top: 140px;
 }
-/*# sourceMappingURL=style.css.map */
