@@ -2805,12 +2805,6 @@ input[type="submit"], button {
   cursor: pointer;
 }
 
-.thisPage {
-  background-color: #00A5A3;
-  color: #FFFFFF;
-  border-radius: 5px;
-}
-
 .breadcrumbs ul {
   text-align: left;
   padding: 30px 0;
@@ -2842,7 +2836,7 @@ input[type="submit"], button {
 }
 
 .section1, .section2 {
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 .section1 .level11, .section2 .level11 {
@@ -3122,7 +3116,6 @@ input[type="submit"], button {
   display: block;
   border-radius: 0 0 10px 10px;
   height: 120px;
-  background-color: #EFEFEF;
   padding: 10px 30px;
 }
 
@@ -3226,6 +3219,88 @@ input[type="submit"], button {
   margin: 0;
 }
 
+.gMessage {
+  padding: 0;
+  overflow: hidden;
+}
+
+.gMessage .msgInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 30px;
+}
+
+.gMessage .msgInfo .inform_pic {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.gMessage .msgInfo .inform_pic img {
+  width: 100%;
+}
+
+.gMessage .msgInfo .inform_text {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.gMessage .msgInfo .inform_text p {
+  margin: 0;
+}
+
+.gMessage .msgInfo .level1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.gMessage .msgInfo .level0 {
+  margin: 0 30px;
+}
+
+.gMessage .msgInfo .grouper {
+  background-color: #EFEFEF;
+}
+
+.gMessage .grouper {
+  background-color: #EFEFEF;
+}
+
+.myMsg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.myMsg .text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 30px;
+  font-size: 16px;
+  padding: 10px;
+  border: 3px solid #00A5A3;
+  border-radius: 10px;
+  color: #626262;
+}
+
 .moreGroups {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3316,7 +3391,37 @@ input[type="submit"], button {
   margin: 10px;
 }
 
-.myMsg
+.groupsPage ul {
+  font-weight: bold;
+  text-align: center;
+}
+
+.groupsPage ul li {
+  margin: 0 15px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.groupsPage ul li a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.groupsPage ul li a:hover {
+  background-color: #00A5A3;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.groupsPage .thisPage {
+  background-color: #00A5A3;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
 .groupNewStart {
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -3325,12 +3430,10 @@ input[type="submit"], button {
   height: 880px;
 }
 
-.myMsg
 .groupNewStart .top {
   margin-bottom: 10px;
 }
 
-.myMsg
 .groupNewStart .left {
   width: 49%;
   padding-right: 45px;
@@ -3338,14 +3441,12 @@ input[type="submit"], button {
   display: inline-block;
 }
 
-.myMsg
 .groupNewStart .right {
   width: 50%;
   padding-left: 45px;
   display: inline-block;
 }
 
-.myMsg
 .groupNewStart .right .btn {
   width: 100%;
   text-align: center;
@@ -3418,31 +3519,6 @@ input[type="submit"], button {
 
 .picI .imgs {
   cursor: pointer;
-}
-
-.groupsPage ul {
-  font-weight: bold;
-  text-align: center;
-}
-
-.groupsPage ul li {
-  margin: 0 15px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-}
-
-.groupsPage ul li a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  height: 100%;
-}
-
-.groupsPage ul li a:hover {
-  background-color: #00A5A3;
-  color: #FFFFFF;
-  border-radius: 5px;
 }
 
 .wrap .stepBreadcrumbs {
