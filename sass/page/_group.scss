@@ -17,13 +17,8 @@ $grayColor3: #EFEFEF;
 input[type="submit"], button{
     cursor: pointer;
 }
-//所在頁
-.thisPage{
-    background-color: $greenColor3;
-    color: $white;
-    border-radius: 5px;
-}
 
+// #app{
     //麵包屑
     .breadcrumbs{
         ul{
@@ -54,7 +49,7 @@ input[type="submit"], button{
     }
     //第一區
     .section1, .section2{
-        padding-bottom: 30px;
+        padding-bottom: 60px;
         .level11{
             font-weight:bold;
         }
@@ -308,7 +303,6 @@ input[type="submit"], button{
             display: block;
             border-radius: 0 0 10px 10px;
             height: 120px;
-            background-color: $grayColor3;
             padding: 10px 30px;
             .third_title{
                 margin-bottom: 10px;
@@ -331,6 +325,7 @@ input[type="submit"], button{
                         }
                     }
                     .inform_text{
+                        
                         vertical-align: middle;
                         display: inline-block;
                         a{
@@ -350,8 +345,7 @@ input[type="submit"], button{
                         display: inline-block;
                     }
                 }
-            }
-            
+            }            
         }
     }
     .groupBlockI{
@@ -390,6 +384,64 @@ input[type="submit"], button{
                     margin: 0;
                 }
             }
+        }
+    }
+    //留言
+    .gMessage{
+        padding: 0;
+        overflow: hidden;
+        .msgInfo{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+            .inform_pic{
+                // vertical-align: middle;
+                width:46px;
+                height: 46px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 15px;
+                display: inline-block;
+                img{
+                    width:100%;
+                }
+            }
+            .inform_text{
+                vertical-align: middle;
+                display: inline-block;
+                p{
+                    margin: 0;
+                }
+            }
+            .level1{
+                flex:1;
+            }
+            .level0{
+                margin: 0 30px;
+            }
+            .grouper{
+                background-color: $grayColor3;
+            }
+        }
+        .grouper{
+            background-color: $grayColor3;
+        }
+    }
+    .myMsg{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .text{
+            flex:1;
+            margin:0 30px;
+            font-size: 16px;
+            padding: 10px;
+            border: 3px solid $greenColor3;
+            border-radius: 10px;
+
+            color: $grayColor1;
+            
         }
     }
     //看更多
@@ -463,8 +515,38 @@ input[type="submit"], button{
             }
         }
     }
-    .myMsg
-
+    //頁數
+    .groupsPage{
+        ul{
+            font-weight: bold;
+            text-align: center;;
+            // text-align: center;
+            // display: flex;
+            li{
+                margin: 0 15px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                a{
+                    display: inline-block;
+                    line-height: 40px;
+                    width: 100%;
+                    height: 100%;
+                    &:hover{
+                        background-color: $greenColor3;
+                        color: $white;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        //所在頁
+        .thisPage{
+            background-color: $greenColor3;
+            color: $white;
+            border-radius: 5px;
+}
+    }
     //我要揪團頁
     .groupNewStart{
         background-color: $white;
@@ -549,29 +631,4 @@ input[type="submit"], button{
             cursor: pointer;
         }
     }
-    //頁數
-    .groupsPage{
-        ul{
-            font-weight: bold;
-            text-align: center;;
-            // text-align: center;
-            // display: flex;
-            li{
-                margin: 0 15px;
-                width: 40px;
-                height: 40px;
-                line-height: 40px;
-                a{
-                    display: inline-block;
-                    line-height: 40px;
-                    width: 100%;
-                    height: 100%;
-                    &:hover{
-                        background-color: $greenColor3;
-                        color: $white;
-                        border-radius: 5px;
-                    }
-                }
-            }
-        }
-    }
+// }
