@@ -14,7 +14,7 @@
             }
         }
         .chooseCardStep{
-            background-color: $yellowColor1;
+            background-color: $orangeColor1;
             padding: 1.2rem;
             border-radius: 50%;
             p{
@@ -28,22 +28,23 @@
         margin: 0 auto;
         
         .postcard{
-            border: 1px solid red;
             margin-right: 15px;
             width: 840px;
             height: 560px;
             position: relative;
             background-size: cover;
             background-repeat: no-repeat;
+            background-image: url("../../pic/postcardMaterial/paper/paper1.png");
             
             .pdContentImg{
-                width: 8%;
+                width: 15%;
                 position: absolute;
                 bottom: 0%;
-                left: 45%;
+                left: 43%;
                 border-radius: 50%;
                 padding: 15px 25px 15px 25px;
-                display: none;
+                display: block;
+                background-image: url("../../pic/postcardMaterial/paper/paper1.png");
             }
 
 
@@ -53,15 +54,17 @@
                 margin: 0 auto;
                 margin-top: 2%;
                 background-color: #1e1e1e;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
         .rightPostcard{
-            border: 1px solid blue;
             width: 287px;
             height: 560px;
             background-image: url("../../pic/postcardMaterial/leftBackground.svg");
             background-size: cover;
             background-repeat: no-repeat;
+
             p{
                 text-align: center;
                 margin-top: 10%;
@@ -72,10 +75,22 @@
                 display: none;
                 flex-direction: column;
                 height: 400px;
-                justify-content: space-around;
-                align-items: center;
                 width: 90%;
                 margin: 0 auto;
+                overflow: auto;
+                #rightStep2::-webkit-scrollbar-track {
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                    background-color: #ffc0cb;
+                  }
+                  //捲軸寬度
+                  #rightStep2::-webkit-scrollbar {
+                    width: 6px;
+                    background-color: black;
+                  }
+                  //捲軸本體顏色
+                  #rightStep2::-webkit-scrollbar-thumb {
+                    background-color: #bb6573;
+                  }
                 
                 .paperTexture{
                     height: 30%;
@@ -90,25 +105,50 @@
                         width: 60%;
                         height: 50%;
                         margin: 0 auto;
-                        img{
+                        .postcardPaper{
                             width: 100%;
                             height: 100%;
+                            border: 5px solid rgba(255, 0, 0, 0);
                         }
-                        img:hover{
+                        .postcardPaper:hover{
                             transition: all .3s;
                             transform: scale(1.2,1.2);
-                            image-rendering: optimizeSpeed;
-                            -ms-interpolation-mode: nearest-neighbor;
-                            -webkit-backface-visibility: hidden;
-                            backface-visibility: hidden;                        
+                    
                         }
-                        img:not( :hover ){
-                            transition: all .3s;
-                            transform: scale(1,1);
+                        #paper1{
+                            background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+                            background-size: cover;
+                            border: 5px solid rgba(255, 0, 0, 0.4);
+                        }
+                        #paper2{
+                            background-image: url("../../pic/postcardMaterial/paper/paper2.png");
+                            background-size: cover;
+                        }
+                        #paper3{
+                            background-image: url("../../pic/postcardMaterial/paper/paper3.png");
+                            background-size: cover;
                         }
                     }
                 }
+            .photoChoose{
+                height: 120px;
+                width: 100%;
+                position: relative;
+                .postPhoto{
+                    width: 70%;
+                    position: absolute;
+                    left: 17%;
+                    top: 20%;
+                    border: 5px solid rgba(255, 0, 0, 0);
+                }
+                .postPhoto:hover{
+                    transition: all .3s;
+                    transform: scale(1.2,1.2);
+                }
+            }    
             }
+            
+
             .stepContent{
                 display: flex;
                 justify-content: space-evenly;

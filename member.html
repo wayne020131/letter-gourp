@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vue component -- member</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./hamburgers-master/dist/hamburgers.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <link rel="shortcut icon" href="./pic/commom/1017_logo.png">
 </head>
 <body>
+    <!--header開始-->
     <header >
         <div class="forphone">
         <button class="hamburger hamburger--spring" type="button">
@@ -17,12 +19,18 @@
         </button>
         </div>
         <nav class="wrap">
-            <h1 class="nav_logo">
-                <a href="#">
-                    <img class="desk" src="./pic/電腦版_header.svg">
-                    <img class="phone" src="./pic/手機_header.svg">
+            <div href="#" class="nav_logo">
+                <a href="#" class="logo_link -bottom">
+                    <img class="desk sun" src="./pic/commom/太陽.svg" alt="">
                 </a>
-            </h1>
+                <a class="changelogo" href="#">
+                <img class="phone" src="./pic/commom/手機_header.svg">
+                </a>
+                <div class="middle_bg"></div>
+                <a href="#" class="logo_link -up">
+                    <img class="desk" src="./pic/commom/電腦版_header.svg">
+                </a>
+            </div>
             <div class="nav_list">
                 <ul >
                     <li><a class="nav_title" href="#">揪團露營</a></li>
@@ -35,52 +43,251 @@
             </div>
         </nav>
     </header>
+     <!--header結束-->
 
-    <section class="section1">
-        <div class="wrap">
-            <div class="title">
-                內容寫在這裡1
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="wrap">
-            <div class="title">
-                內容寫在這裡2
-            </div>
-        </div>
-    </section>
 
-    <footer>
-        <div class="footer_bgc">
-            <div class="wrap">
-                <div class="footerarrange">
-                    <div class="footright">
-                        <div class="level2 green1">聯絡資訊 |</div>
-                        <div class="level0 green1">
-                            電子信箱|ShanSen@gmail.com<br>
-                            營業時間|週二至週日 10:00~20:00(國定假日休假)
+    <!--內容開始-->
+    <div class="bgcColor member_page">
+        <section class="section1 bgcColor member_section">
+            <div class="wrap wrap_block" >
+                <div class="title">
+
+                    <div id="app" class="app_anyway"> <!--HTML DOM template-->
+
+                        <div class="app_left_aside">
+                            
+                            <div class="level5 grayColor1 aside_subtitle">會員小屋</div>
+
+                            <div class="buttonClassification">
+                                <img class="imgSize" src="./pic/member/avatar.png">
+                                <button class="thirdbtn1_green" @click="content='memberInformation'">會員資訊</button>
+                            </div>
+                            <div class="buttonClassification">
+                                <img class="imgSize" src="./pic/member/message.png">
+                                <button class="thirdbtn1_green" @click="content='memberMessage'">悄悄話</button>    
+                            </div>
+                            <div class="level5 grayColor1 aside_subtitle">會員足跡</div>
+                            <div class="buttonClassification">
+                                <img class="imgSize" src="./pic/member/group.png">
+                                <button class="thirdbtn1_green" @click="content='memberGroup'">揪團露營</button>
+                            </div>
+                            <div class="buttonClassification">
+                                <img class="imgSize"src="./pic/member/change.png">
+                                <button class="thirdbtn1_green" @click="content='memberEquipment'">設備交換</button>
+                            </div>
+                            <div class="buttonClassification">
+                                <img class="imgSize" src="./pic/member/campsite.png">
+                                <button class="thirdbtn1_green" @click="content='memberCamp'">營區攻略</button>
+                            </div>
                         </div>
+                
+                        <!--自己的第一區塊以上-->
+                    
+
+                        <div class="app_right_aside">
+                    
+                            <!--Vue開始-->
+                        
+                            <component :is="content"></component>
+                            <!-- 透過component元素，去指定其屬性is進行v-bind -->
+
+                        </div>
+
+
+                    </div> <!--app尾-->
+
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+   
+
+<!--內容結束-->
     
+<footer>
+    <div class="footer_bgc">
+        <div class="wrap">
+            <div class="footerarrange">
+                <div class="footright">
+                    <div class="level2 green1">聯絡資訊 |</div>
+                    <div class="level0 green1">
+                        電子信箱|ShanSen@gmail.com<br>
+                        營業時間|週二至週日 10:00~20:00(國定假日休假)
                     </div>
-                    <div class="footercenter">
-                        <a href="#">
-                            <img src="./pic/電腦版_header.svg">
-                        </a>
-                    </div>
-                    <div class="footerright">
+                </div>
+                <div class="footercenter">
+                    <a href="#">
+                        <img src="./pic/commom/電腦版_header.svg">
+                    </a>
+                </div>
+                <div class="footerright">
+                    <div class="link">
                         <div class="level2 green1">相關連結 |</div>
                         <div class="footer_icon">
-                            <img src="./pic/foot_line.svg" alt="">
-                            <img src="./pic/foot_ig.svg" alt="">
-                            <img src="./pic/foot_fb.svg" alt="">
-                            <img src="./pic/foot_email.svg" alt="">
+                            <img src="./pic/commom/foot_line.svg" alt="">
+                            <img src="./pic/commom/foot_ig.svg" alt="">
+                            <img src="./pic/commom/foot_fb.svg" alt="">
+                            <img src="./pic/commom/foot_email.svg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="level1 copyright">Copyright &copy; 2020ShanSen</div>
-    </footer>
+    </div>
+    <div class="level1 copyright">Copyright &copy; 2020ShanSen</div>
+</footer>
+    <script>
+        Vue.component('memberInformation', { 
+            template: `
+            <div class="member_information">
+                    
+                <div class="member_information_title level5">
+                    <!-- 會員資訊標題 -->
+                    <img class="memberTitle_img" src="./pic/member/avatar.png">
+                    會員資訊
+                </div>
+            
+                <div class="member_information_detail">
+
+                    <!-- 會員資訊圖片 -->
+                    <div class="member_image">
+                        <img src="./pic/member/member_01.png">
+                        <div class="level0 member_imageButton">
+                            <button class="tagbtn_green">編輯大頭像</button>
+                            <div>*限定格式png、jpg</div>
+                        </div>
+                    </div>
+
+                    <!-- 會員資訊內容 -->
+                    <div class="member_information_main"> 
+                        <div class="level2">編號<span class="gray1">00000000001</span></div>
+                        <div class="level2">等級<span class="gray1">鑽石會員(目前累積分數共825分)</span></div>
+                        <div class="level2">帳號<span class="gray1">iamwang12345@gmail.com</span></div>
+                        <div class="level2">密碼<span class="gray1">*************</span></div>
+                        <div class="level2">姓名<span class="gray1">王大槌</span></div>
+                        <div class="level2">暱稱<span class="gray1">槌槌</span></div>
+
+                        <div class="edit_block">
+                            <button class="tagbtn_green">編輯</button>
+                        </div>
+                    </div>
+                </div>
+            
+                </div>
+                    
+            </div>
+            
+            `,
+        });
+
+        Vue.component('memberMessage', { 
+            template: `
+                <form>
+                    <p>
+                        <textarea></textarea>
+                    </p>
+                    <button>Submit</button>
+                </form>
+            `,
+        });
+
+        Vue.component('memberGroup', {
+            template: `
+            <div class="member_Group">
+                    
+                <div class="member_information_title sub_title">
+                    <!-- 揪團露營標題 -->
+                    <img class="memberTitle_img" src="./pic/member/group.png">
+                    揪團露營
+                </div>
+                
+                <div class="member_Group_detail">
+                    <div class="group_button">
+                        <button class="secondbtn1" @click="startGroupManage">開團管理</button>
+                        <button class="secondbtn2" @click="joinGroupManage">參團管理</button>
+                    </div>
+                    <!-- 揪團露營主要切換面 -->
+                    <div>
+                        <div class="startGroupManage_page bgcColor">
+                            <ul>
+                                <li class="group_everyRow">
+                                    <img src="./pic/member/member_group.jpg">
+                                    <ul>
+                                        <li class="level0">1.團名：吃飽睡睡飽吃團</li>
+                                        <li class="level0">2.日期：2020/09/14</li>
+                                        <li class="level0">3.地點：中央大學草地</li>
+                                        <li class="level0">4.參加人數：20人</li>
+                                        <li class="level0">5.活動內容：立志吃飽睡睡飽吃....</li>
+                                    </ul>
+                                    <button class="thirdbtn1_orange">刪除</button>
+                                </li>
+                                <li class="group_everyRow">
+                                    <img src="./pic/member/member_group.jpg">
+                                    <ul>
+                                        <li class="level0">1.團名：吃飽睡睡飽吃團</li>
+                                        <li class="level0">2.日期：2020/09/14</li>
+                                        <li class="level0">3.地點：中央大學草地</li>
+                                        <li class="level0">4,參加人數：20人</li>
+                                        <li class="level0">5.活動內容：立志吃飽睡睡飽吃....</li>
+                                    </ul>
+                                    <button class="thirdbtn1_orange">刪除</button>
+                                </li>
+                                <li class="group_everyRow unlockRow">
+                                    <img src="./pic/member/member_group.jpg">
+                                    <ul>
+                                        <li class="level0">1.團名：吃飽睡睡飽吃團</li>
+                                        <li class="level0">2.日期：2020/09/14</li>
+                                        <li class="level0">3.地點：中央大學草地</li>
+                                        <li class="level0">4.參加人數：20人</li>
+                                        <li class="level0">5.活動內容：立志吃飽睡睡飽吃....</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="joinGroupManage_page">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `,
+            methods: {
+                startGroupManage(){
+                    
+                },
+                joinGroupManage(){
+
+                }
+            },
+        });
+        Vue.component('memberEquipment', { 
+            template: `
+                <p>
+                    <input type="checkbox"> Morning  
+                    <input type="checkbox"> Afternoon  
+                    <input type="checkbox"> Evening
+                </p>
+            `,
+        });
+        Vue.component('memberCamp', { 
+            template: `
+                <p>
+                    <input type="checkbox"> Morning  
+                    <input type="checkbox"> Afternoon  
+                    <input type="checkbox"> Evening
+                </p>
+            `,
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                content: 'memberInformation',
+            },
+        });
+
+    </script>
 </body>
 </html>
