@@ -3592,39 +3592,71 @@ input[type="submit"], button {
   position: relative;
 }
 
-.game {
+.home_group {
   width: 100%;
-  min-height: 100vh;
-  background-image: url(../../pic/index/1018_pic-04.svg);
+  height: 500px;
+  background-color: #f6f3ed;
+  background-image: url(../../pic/index/1018_pic-01.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.game .game_table {
+.home_equipment {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f6f3ed;
+  background-image: url(../../pic/index/1018_pic-02.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home_camping {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f6f3ed;
+  background-image: url(../../pic/index/1018_pic-03.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home_game {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f6f3ed;
+  background-image: url(../../pic/index/1018_pic-04.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain;
+  background-position: center;
+}
+
+.home_game .game_table {
   margin: 100px auto 0;
 }
 
-.game .game_table .game_title {
+.home_game .game_table .game_title {
   margin: 0 auto;
   margin-left: 20%;
   max-width: 200px;
   margin-top: 6%;
 }
 
-.game .game_table .game_title_word {
+.home_game .game_table .game_title_word {
   margin: 0 auto;
   margin-left: 20%;
   max-width: 200px;
 }
 
-.game .game_table form .game_title_question01 {
+.home_game .game_table form .game_title_question01 {
   margin: 0 auto;
   text-align: center;
   padding-top: 57px;
 }
 
-.game .game_table form .game_button {
+.home_game .game_table form .game_button {
   text-align: center;
   margin: auto;
   margin-top: 40px;
