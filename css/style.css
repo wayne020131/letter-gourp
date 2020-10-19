@@ -3317,34 +3317,6 @@ input[type="submit"], button {
 }
 
 .myMsg
-.groupsPage ul {
-  font-weight: bold;
-  text-align: center;
-}
-
-.myMsg
-.groupsPage ul li {
-  margin: 0 15px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-}
-
-.myMsg
-.groupsPage ul li a {
-  display: inline-block;
-  line-height: 40px;
-  width: 100%;
-  height: 100%;
-}
-
-.myMsg
-.groupsPage ul li a:hover {
-  background-color: #00A5A3;
-  color: #FFFFFF;
-  border-radius: 5px;
-}
-
 .groupNewStart {
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -3353,10 +3325,12 @@ input[type="submit"], button {
   height: 880px;
 }
 
+.myMsg
 .groupNewStart .top {
   margin-bottom: 10px;
 }
 
+.myMsg
 .groupNewStart .left {
   width: 49%;
   padding-right: 45px;
@@ -3364,12 +3338,14 @@ input[type="submit"], button {
   display: inline-block;
 }
 
+.myMsg
 .groupNewStart .right {
   width: 50%;
   padding-left: 45px;
   display: inline-block;
 }
 
+.myMsg
 .groupNewStart .right .btn {
   width: 100%;
   text-align: center;
@@ -3444,6 +3420,31 @@ input[type="submit"], button {
   cursor: pointer;
 }
 
+.groupsPage ul {
+  font-weight: bold;
+  text-align: center;
+}
+
+.groupsPage ul li {
+  margin: 0 15px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.groupsPage ul li a {
+  display: inline-block;
+  line-height: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.groupsPage ul li a:hover {
+  background-color: #00A5A3;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
 .wrap .stepBreadcrumbs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3516,7 +3517,7 @@ input[type="submit"], button {
   border: 1px solid blue;
   width: 287px;
   height: 560px;
-  background-image: url("../../postcardMaterial/leftBackground.svg");
+  background-image: url("../../pic/postcardMaterial/leftBackground.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -3545,7 +3546,6 @@ input[type="submit"], button {
 }
 
 .wrap .postcard_content .rightPostcard .stylePostcard .paperTexture {
-  border: 1px solid red;
   height: 30%;
   width: 100%;
 }
@@ -3557,7 +3557,6 @@ input[type="submit"], button {
 }
 
 .wrap .postcard_content .rightPostcard .stylePostcard .paperTexture .posBackground {
-  border: 1px solid;
   width: 60%;
   height: 50%;
   margin: 0 auto;
@@ -3566,6 +3565,24 @@ input[type="submit"], button {
 .wrap .postcard_content .rightPostcard .stylePostcard .paperTexture .posBackground img {
   width: 100%;
   height: 100%;
+}
+
+.wrap .postcard_content .rightPostcard .stylePostcard .paperTexture .posBackground img:hover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  image-rendering: optimizeSpeed;
+  -ms-interpolation-mode: nearest-neighbor;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.wrap .postcard_content .rightPostcard .stylePostcard .paperTexture .posBackground img:not(:hover) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
 .wrap .postcard_content .rightPostcard .stepContent {
