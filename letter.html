@@ -40,6 +40,7 @@
         //建立事件玲聽
         previousStep.addEventListener('click',changeStepBack);
         nextStep.addEventListener('click',changeStepNext);
+        for(let i =0; i<paperList.length; i++){
             paperList[0].addEventListener('click',function(){
                 let paperPassId = this.id;
                 paperBackground(paperPassId);
@@ -52,8 +53,7 @@
                 let paperPassId = this.id;
                 paperBackground(paperPassId);
             });
-        
-        
+        }        
         //函式區
         function changeStepBack(){
             stepControl-=1;
@@ -105,6 +105,7 @@
             document.getElementsByClassName('postcard')[0].style.backgroundImage = `url("./pic/postcardMaterial/paper/${paperNowId}.png")`;
             document.getElementsByClassName('pdContentImg')[0].style.display = "block";
             document.getElementsByClassName('pdContentImg')[0].style.backgroundImage =`url("./pic/postcardMaterial/paper/${paperNowId}.png")`;
+            
         }
     }
     window.addEventListener('load',doFirst);
