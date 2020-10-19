@@ -1,0 +1,39 @@
+//小遊戲
+.game{
+    width: 100%;
+    min-height: 100vh;
+    // background-color: #f6f3ed;
+
+    background-image: url(../../pic/index/1018_pic-04.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .game_table{
+        margin: 100px auto 0;
+        .game_title{
+            margin: 0 auto;
+            // border: 1px solid red;
+            margin-left: 20%;
+            max-width: 200px;
+            margin-top: 6%;
+        }
+        .game_title_word{
+            margin: 0 auto;
+            margin-left: 20%;
+            max-width: 200px;
+        }
+        form{
+            .game_title_question01{
+                margin: 0 auto;  
+                // border: 1px solid red;
+                text-align: center;
+                padding-top: 57px;
+            }
+            .game_button{
+                text-align: center;
+                margin: auto;
+                margin-top: 40px;
+            }
+        }
+    }
+}
