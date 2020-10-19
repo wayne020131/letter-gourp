@@ -6,6 +6,7 @@
     <title>Vue component -- member</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <link rel="shortcut icon" href="./pic/commom/1017_logo.png">
 </head>
 <body>
     <!--header開始-->
@@ -46,17 +47,16 @@
 
 
     <!--內容開始-->
-    <div class="bgcColor member_page">  <!-- 自己設定 -->
-        <section class="section1 bgcColor">
+    <div class="bgcColor member_page">
+        <section class="section1 bgcColor member_section">
             <div class="wrap wrap_block" >
                 <div class="title">
-        <!--自己的第一區塊以下-->
-        <!-- 動態組件: 先定義好每一個組件，透過條件判斷來決定出現哪一個組件 -->
-                    <div id="app"> <!--HTML DOM template-->
+
+                    <div id="app" class="app_anyway"> <!--HTML DOM template-->
 
                         <div class="app_left_aside">
                             
-                            <p class="level5 grayColor1">會員小屋</p>
+                            <div class="level5 grayColor1 aside_subtitle">會員小屋</div>
 
                             <div class="buttonClassification">
                                 <img class="imgSize" src="./pic/member/avatar.png">
@@ -66,7 +66,7 @@
                                 <img class="imgSize" src="./pic/member/message.png">
                                 <button class="thirdbtn1_green" @click="content='memberMessage'">悄悄話</button>    
                             </div>
-                            <p class="level5 grayColor1">會員足跡</p>
+                            <div class="level5 grayColor1 aside_subtitle">會員足跡</div>
                             <div class="buttonClassification">
                                 <img class="imgSize" src="./pic/member/group.png">
                                 <button class="thirdbtn1_green" @click="content='memberGroup'">揪團露營</button>
@@ -143,7 +143,7 @@
             template: `
             <div class="member_information">
                     
-                <div class="member_information_title sub_title">
+                <div class="member_information_title level5">
                     <!-- 會員資訊標題 -->
                     <img class="memberTitle_img" src="./pic/member/avatar.png">
                     會員資訊
@@ -156,18 +156,18 @@
                         <img src="./pic/member/member_01.png">
                         <div class="level0 member_imageButton">
                             <button class="tagbtn_green">編輯大頭像</button>
-                            <p>*限定格式png、jpg</p>
+                            <div>*限定格式png、jpg</div>
                         </div>
                     </div>
 
                     <!-- 會員資訊內容 -->
                     <div class="member_information_main"> 
-                        <p class="level2">編號<span class="gray1">00000000001</span></p>
-                        <p class="level2">等級<span class="gray1">鑽石會員(目前累積分數共825分)</span></p>
-                        <p class="level2">帳號<span class="gray1">iamwang12345@gmail.com</span></p>
-                        <p class="level2">密碼<span class="gray1">*************</span></p>
-                        <p class="level2">姓名<span class="gray1">王大槌</span></p>
-                        <p class="level2">暱稱<span class="gray1">槌槌</span></p>
+                        <div class="level2">編號<span class="gray1">00000000001</span></div>
+                        <div class="level2">等級<span class="gray1">鑽石會員(目前累積分數共825分)</span></div>
+                        <div class="level2">帳號<span class="gray1">iamwang12345@gmail.com</span></div>
+                        <div class="level2">密碼<span class="gray1">*************</span></div>
+                        <div class="level2">姓名<span class="gray1">王大槌</span></div>
+                        <div class="level2">暱稱<span class="gray1">槌槌</span></div>
 
                         <div class="edit_block">
                             <button class="tagbtn_green">編輯</button>
@@ -193,7 +193,7 @@
             `,
         });
 
-        Vue.component('memberGroup', { 
+        Vue.component('memberGroup', {
             template: `
             <div class="member_Group">
                     
@@ -205,8 +205,8 @@
                 
                 <div class="member_Group_detail">
                     <div class="group_button">
-                        <button class="secondbtn1" id="startGroupManage">開團管理</button>
-                        <button class="secondbtn2" id="joinGroupManage">參團管理</button>
+                        <button class="secondbtn1" @click="startGroupManage">開團管理</button>
+                        <button class="secondbtn2" @click="joinGroupManage">參團管理</button>
                     </div>
                     <!-- 揪團露營主要切換面 -->
                     <div>
@@ -234,7 +234,7 @@
                                     </ul>
                                     <button class="thirdbtn1_orange">刪除</button>
                                 </li>
-                                <li class="group_everyRow">
+                                <li class="group_everyRow unlockRow">
                                     <img src="./pic/member/member_group.jpg">
                                     <ul>
                                         <li class="level0">1.團名：吃飽睡睡飽吃團</li>
@@ -243,17 +243,24 @@
                                         <li class="level0">4.參加人數：20人</li>
                                         <li class="level0">5.活動內容：立志吃飽睡睡飽吃....</li>
                                     </ul>
-                                    <button class="thirdbtn1_orange">刪除</button>
                                 </li>
+
                             </ul>
                         </div>
                         <div class="joinGroupManage_page">
-                        
-                    </div>
+                        </div>
                     </div>
                 </div>
             </div>
             `,
+            methods: {
+                startGroupManage(){
+                    
+                },
+                joinGroupManage(){
+
+                }
+            },
         });
         Vue.component('memberEquipment', { 
             template: `
@@ -280,6 +287,7 @@
                 content: 'memberInformation',
             },
         });
+
     </script>
 </body>
 </html>

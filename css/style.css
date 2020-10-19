@@ -3444,9 +3444,22 @@ input[type="submit"], button {
   cursor: pointer;
 }
 
+.member_section {
+  height: auto;
+  padding-bottom: 36px;
+}
+
+.app_anyway {
+  width: 1140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .app_left_aside {
   width: 30%;
   background-color: white;
+  padding: 16px;
 }
 
 .buttonClassification {
@@ -3468,8 +3481,8 @@ input[type="submit"], button {
   margin-left: 16px;
 }
 
-.app_left_aside p {
-  margin: 32px 0 32px 10px;
+.aside_subtitle {
+  text-align: left;
 }
 
 .imgSize {
@@ -3480,6 +3493,10 @@ input[type="submit"], button {
   width: 70%;
   padding: 14px;
   background-color: white;
+}
+
+.member_information_title {
+  text-align: left;
 }
 
 .memberTitle_img {
@@ -3506,13 +3523,10 @@ input[type="submit"], button {
 .member_information_main {
   margin: 0 auto;
   width: 50%;
+  text-align: left;
 }
 
-.member_information_main p {
-  margin: 16px 0;
-}
-
-.member_information_main p span {
+.member_information_main span {
   margin-left: 16px;
 }
 
@@ -3524,6 +3538,10 @@ input[type="submit"], button {
   cursor: pointer;
 }
 
+.member_Group_detail {
+  text-align: left;
+}
+
 .startGroupManage_page > ul {
   padding: 16px;
 }
@@ -3532,7 +3550,26 @@ input[type="submit"], button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 150px;
+  margin: 16px 0;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.unlockRow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .group_everyRow img {
@@ -3544,92 +3581,14 @@ input[type="submit"], button {
   height: auto;
   font-size: 0;
   display: block;
+  text-align: left;
+  width: 60%;
+  padding-left: 32px;
 }
 
 .group_everyRow ul li {
   margin: 0;
-}
-
-body {
-  background-image: url(BG002.gif);
-}
-
-#lightBox {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #AFDCDE;
-}
-
-#lightBox .login_container {
-  max-width: 600px;
-  width: 100%;
-  max-height: 450px;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-
-#lightBox .login_container .login_block_left {
-  width: 50%;
-  height: 450px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
-  border-radius: 20px 0px 0px 20px;
-}
-
-#lightBox .login_container .login_block_left tr td {
-  padding-left: 10px;
-}
-
-#lightBox .login_container .login_block_left tr td label span:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#lightBox .login_container .login_block_right {
-  width: 50%;
-  height: 450px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: auto;
-  background-color: white;
-  border-radius: 0px 20px 20px 0px;
-}
-
-#lightBox .login_container .login_block_right tr td label span:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#lightBox .login_container .login_block_mid {
-  width: 300px;
-  height: 450px;
-  position: absolute;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-#lightBox .login_container .login_block_mid img {
-  width: 300px;
-  height: 450px;
-}
-
-#login_img_control:checked ~ .login_container .login_block_mid {
-  -webkit-transform: translateX(-300px);
-          transform: translateX(-300px);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.login_block_mid {
-  -webkit-transform: translateX(300px);
-          transform: translateX(300px);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  text-align: left;
 }
 
 @media screen and (min-width: 1200px) {

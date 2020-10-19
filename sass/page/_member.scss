@@ -1,13 +1,16 @@
-// #app{
-//     width: 1140px;
-//     // border: 1px solid red;
-//     display: flex;
-//     padding-bottom: 50px;
-// }
+.member_section{
+    height: auto;
+    padding-bottom: 36px;
+}
+.app_anyway{
+    width: 1140px;
+    display: flex;
+}
 // 側邊欄
 .app_left_aside{
     width: 30%;
     background-color: white;
+    padding: 16px;
 }
 .buttonClassification{
     display: flex;
@@ -20,9 +23,10 @@
     width: 100px;
     margin-left: 16px;
 }
-.app_left_aside p{
-    margin: 32px 0 32px 10px;
+.aside_subtitle{
+    text-align: left;
 }
+
 .imgSize{ //左側圖片大小
     width: 60px;
 }
@@ -33,6 +37,9 @@
     width: 70%;
     padding: 14px;
     background-color: white;
+}
+.member_information_title{
+    text-align: left;
 }
 .memberTitle_img{
     width: 60px;
@@ -53,11 +60,9 @@
 .member_information_main{
     margin: 0 auto;
     width: 50%;
+    text-align: left;
 }
-.member_information_main p{
-    margin: 16px 0;
-}
-.member_information_main p span{
+.member_information_main  span{
     margin-left: 16px;
 }
 .edit_block{
@@ -68,12 +73,31 @@
 }
 
 //揪團露營
+.member_Group_detail{
+    text-align: left;
+}
 .startGroupManage_page > ul{
     padding: 16px;
 }
 .group_everyRow{
     display: flex;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
     height: 150px;
+    margin: 16px 0 ;
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+}
+.unlockRow::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .4);
 }
 .group_everyRow img{
     width: 200px;
@@ -83,89 +107,11 @@
     height: auto;
     font-size: 0;
     display: block;
+    text-align: left;
+    width: 60%;
+    padding-left: 32px;
 }
 .group_everyRow ul li{
     margin: 0;
+    text-align: left;
 }
-
-//登入頁
-
-body{background-image:url(BG002.gif);} 
-
-#lightBox{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #AFDCDE;
-    .login_container{
-        max-width: 600px;
-        width: 100%;
-        max-height: 450px;
-        height: 100%;
-        margin: 0 auto;
-        position: relative;
-        .login_block_left{
-            width: 50%;
-            height: 450px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: white;
-            border-radius: 20px 0px 0px 20px;
-            tr{
-                td{
-                    padding-left: 10px;
-                    label{
-                        span:hover{
-                            cursor: pointer;
-                            text-decoration: underline;
-                        }
-                    }
-                }
-                
-            }
-            
-        }
-        .login_block_right{
-            width: 50%;
-            height: 450px;
-            position: absolute;
-            top:0;
-            right: 0;
-            margin: auto;
-            background-color:white;
-            border-radius: 0px 20px 20px 0px;
-            tr{
-                td{
-                    label{
-                        span:hover{
-                            cursor: pointer;
-                            text-decoration: underline;
-                        }
-                    }
-                }
-            }
-        }
-        .login_block_mid{
-            width: 300px;
-            height: 450px;
-            position: absolute;
-            border-radius:20px;
-            overflow: hidden;
-                img{
-                    width: 300px;
-                    height: 450px;
-                }
-        }
-    }
-}
-
-
-    #login_img_control:checked~ .login_container .login_block_mid {
-    transform: translateX(-300px);
-    transition: 0.5s;
-    }
-    .login_block_mid {
-        transform: translateX(300px);
-        transition: 0.5s;
-    }
