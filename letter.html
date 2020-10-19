@@ -44,6 +44,11 @@
             paperList[i].addEventListener('click',function(){
                 let paperPassId = this.id;
                 paperBackground(paperPassId);
+            
+            });
+            paperList[i].addEventListener('mouseover',function(){
+                let paperPassId = this.id;
+                postMouseover(paperPassId);
             });
         }
         
@@ -96,12 +101,15 @@
             }
         }
         function paperBackground(paperNowId){
-            document.getElementsByClassName('postcard')[0].style.backgroundImage = `url("./postcardMaterial/paper/${paperNowId}.png")`;
+            document.getElementsByClassName('postcard')[0].style.backgroundImage = `url("./pic/postcardMaterial/paper/${paperNowId}.png")`;
             document.getElementsByClassName('pdContentImg')[0].style.display = "block";
-            document.getElementsByClassName('pdContentImg')[0].style.backgroundImage =`url("./postcardMaterial/paper/${paperNowId}.png")`;
+            document.getElementsByClassName('pdContentImg')[0].style.backgroundImage =`url("./pic/postcardMaterial/paper/${paperNowId}.png")`;
 
         }
-
+        function postMouseover(paperPassId){
+            document.getElementById(paperPassId).style.transform = "scale(1.2, 1.2)";
+            document.getElementById(paperPassId).style.transition = "all .3s";
+        }
 
 
 
@@ -170,7 +178,7 @@
             <div class="postcard_content">
                 <div class="postcard">
                     <div class="pdContentImg">
-                        <img class="postcardLogo" src="./postcardMaterial/LOGO/logoUse.svg">
+                        <img class="postcardLogo" src="./pic/postcardMaterial/LOGO/logoUse.svg">
                     </div>
                     <div class="putPhoto">
                         
@@ -183,21 +191,21 @@
                             <div class="paperTexture">
                                 <p>水印墨綠</p>
                                 <div class='posBackground'>
-                                    <img class="postcardPaper" id="paper1" src="./postcardMaterial/paper/paper1.png">
+                                    <img class="postcardPaper" id="paper1" src="./pic/postcardMaterial/paper/paper1.png">
                                 </div>
                             </div>
                             
                             <div class="paperTexture">
                                 <p>淡點米黃</p>
                                 <div class='posBackground'>
-                                    <img class="postcardPaper" id="paper2" src="./postcardMaterial/paper/paper2.png">
+                                    <img class="postcardPaper" id="paper2" src="./pic/postcardMaterial/paper/paper2.png">
                                 </div>
                             </div>
                             
                             <div class="paperTexture">
                                 <p>格線粉紅</p>
                                 <div class='posBackground'>
-                                    <img class="postcardPaper" id="paper3" src="./postcardMaterial/paper/paper3.png">
+                                    <img class="postcardPaper" id="paper3" src="./pic/postcardMaterial/paper/paper3.png">
                                 </div>
                             </div>
                         </div>
