@@ -40,17 +40,18 @@
         //建立事件玲聽
         previousStep.addEventListener('click',changeStepBack);
         nextStep.addEventListener('click',changeStepNext);
-        for(let i =0;i < paperList.length;i++){
-            paperList[i].addEventListener('click',function(){
+            paperList[0].addEventListener('click',function(){
                 let paperPassId = this.id;
                 paperBackground(paperPassId);
-            
             });
-            paperList[i].addEventListener('mouseover',function(){
+            paperList[1].addEventListener('click',function(){
                 let paperPassId = this.id;
-                postMouseover(paperPassId);
+                paperBackground(paperPassId);
             });
-        }
+            paperList[2].addEventListener('click',function(){
+                let paperPassId = this.id;
+                paperBackground(paperPassId);
+            });
         
         
         //函式區
@@ -104,15 +105,7 @@
             document.getElementsByClassName('postcard')[0].style.backgroundImage = `url("./pic/postcardMaterial/paper/${paperNowId}.png")`;
             document.getElementsByClassName('pdContentImg')[0].style.display = "block";
             document.getElementsByClassName('pdContentImg')[0].style.backgroundImage =`url("./pic/postcardMaterial/paper/${paperNowId}.png")`;
-
         }
-        function postMouseover(paperPassId){
-            document.getElementById(paperPassId).style.transform = "scale(1.2, 1.2)";
-            document.getElementById(paperPassId).style.transition = "all .3s";
-        }
-
-
-
     }
     window.addEventListener('load',doFirst);
 </script>
