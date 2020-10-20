@@ -3562,6 +3562,7 @@ input[type="submit"], button {
 }
 
 .wrap .postcard_content .postcard {
+  display: block;
   margin-right: 15px;
   width: 840px;
   height: 560px;
@@ -3590,6 +3591,39 @@ input[type="submit"], button {
   background-color: #1e1e1e;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.wrap .postcard_content .leftPostcard1 {
+  display: none;
+  margin-right: 15px;
+  width: 840px;
+  height: 560px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+}
+
+.wrap .postcard_content .postcard2 {
+  display: none;
+  margin-right: 15px;
+  width: 840px;
+  height: 560px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+}
+
+.wrap .postcard_content .leftPostcard2 {
+  display: block;
+  margin-right: 15px;
+  width: 840px;
+  height: 560px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../pic/postcardMaterial/paper/paper1.png");
 }
 
 .wrap .postcard_content .rightPostcard {
@@ -4827,3 +4861,4 @@ input[type="submit"], button {
 .section1 {
   padding-top: 140px;
 }
+/*# sourceMappingURL=style.css.map */

@@ -28,6 +28,7 @@
         margin: 0 auto;
         
         .postcard{
+            display: block;
             margin-right: 15px;
             width: 840px;
             height: 560px;
@@ -57,6 +58,36 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+        }
+        .leftPostcard1{
+            display: none;
+            margin-right: 15px;
+            width: 840px;
+            height: 560px;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+        }
+        .postcard2{
+            display: none;
+            margin-right: 15px;
+            width: 840px;
+            height: 560px;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+        }
+        .leftPostcard2{
+            display: block;
+            margin-right: 15px;
+            width: 840px;
+            height: 560px;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../../pic/postcardMaterial/paper/paper1.png");
         }
         .rightPostcard{
             width: 287px;
