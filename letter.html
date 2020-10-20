@@ -27,6 +27,9 @@
         let paper3 = document.getElementById('paper3');
         let paperList = document.querySelectorAll('.postcardPaper');
         let postPhotoList = document.querySelectorAll('.postPhoto');
+        let postcardPhotoPut = document.getElementById('postcardPhotoPut');
+        let updatePhotoHere =document.getElementById('upPhoto1');
+        
         
         
         
@@ -56,7 +59,7 @@
                 photoChange(photoPassId);
             });
         }
-        
+        updatePhotoHere.addEventListener('change',PhotoPut);
         
         //函式區
         function changeStepBack(){
@@ -122,6 +125,18 @@
             }
             document.getElementById(photoId).style.borderColor ="rgba(0, 0, 255, 0.4)";
             document.getElementsByClassName('putPhoto')[0].style.backgroundImage = `url("./pic/postcardMaterial/presetPhoto/${photoId}.jpg")`;
+        }
+        function PhotoPut(){
+        let putPhotoFrom = updatePhotoHere.files[0];
+        console.log(putPhotoFrom);
+        let readPhoto = new FileReader();
+        readPhoto.readAsDataURL(putPhotoFrom);
+        readPhoto.addEventListener('load',function(e){
+            postcardPhotoPut.src = readPhoto.result;
+            postcardPhotoPut.style.width = '100%';
+            postcardPhotoPut.style.height = '100%';
+        });
+
         }
     }
     window.addEventListener('load',doFirst);
@@ -197,7 +212,7 @@
                         <img class="postcardLogo" src="./pic/postcardMaterial/LOGO/logoUse.svg">
                     </div>
                     <div class="putPhoto">
-                        
+                        <img id="postcardPhotoPut">
                     </div>
                 </div>
                 <div class="rightPostcard">
@@ -245,6 +260,7 @@
                             </div>
                             <label class="photoUpdate1">
                                 <input type="file" id="upPhoto1" >
+                                <img class="updatePicPos" id="updatePhotoHere" src="./pic/updatePicPos.svg">
                             </label>
                         </div>
                         <div class="stylePostcard" id="rightStep3">

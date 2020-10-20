@@ -75,23 +75,10 @@
                 display: none;
                 flex-direction: column;
                 height: 400px;
-                width: 90%;
+                width: 100%;
                 margin: 0 auto;
                 overflow: auto;
-                #rightStep2::-webkit-scrollbar-track {
-                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-                    background-color: #ffc0cb;
-                  }
-                  //捲軸寬度
-                  #rightStep2::-webkit-scrollbar {
-                    width: 6px;
-                    background-color: black;
-                  }
-                  //捲軸本體顏色
-                  #rightStep2::-webkit-scrollbar-thumb {
-                    background-color: #bb6573;
-                  }
-                
+                text-align: center;
                 .paperTexture{
                     height: 30%;
                     width: 100%;
@@ -130,52 +117,64 @@
                         }
                     }
                 }
-            .photoChoose{
-                height: 120px;
-                width: 100%;
-                position: relative;
-                .postPhoto{
-                    width: 70%;
-                    position: absolute;
-                    left: 17%;
-                    top: 20%;
-                    border: 5px solid rgba(255, 0, 0, 0);
-                }
-                .postPhoto:hover{
-                    transition: all .3s;
-                    transform: scale(1.2,1.2);
-                }
-
-            }
-            .photoUpdate1{
-                #upPhoto1{
-                    margin-bottom: 2%;
-                }    
-            }
-
-            }
-            
-
-            .stepContent{
-                display: flex;
-                justify-content: space-evenly;
-                margin: 0 auto;
-                width: 90%;
-                margin-top: 2%;
-            }
-                .stepHover{
-                    background-color: #FFFFFF;
-                    color: #00A5A3;
-                    width: 120px;
-                    height: 45px;
-                    font-size: 16px;
-                    border-radius: 8px;
-                    border-color: #00A5A3;
-                    border-width: 3px;
-                    font-weight: bold;
+                .photoChoose{
+                    height: 120px;
+                    width: 100%;
                     position: relative;
+                    .postPhoto{
+                        width: 65%;
+                        position: absolute;
+                        left: 20%;
+                        top: 20%;
+                        border: 5px solid rgba(255, 0, 0, 0);
+                    }
+                    .postPhoto:hover{
+                        transition: all .3s;
+                        transform: scale(1.2,1.2);
+                    }
+                }
+                label{
+                    display: inline-block;
+                    height: 120px;
+                    margin: 0 auto;
+                    margin-top: 10%;
+                    width: 55%;
+                    margin-left: 6%;
+                    #upPhoto1{
+                        display: none;
+                    }
+                    .updatePicPos{
+                        display: block;
+                        cursor: pointer;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
+            #rightStep3{
+                text-align: center;
+            }
+                    .stepContent{
+                        display: flex;
+                        justify-content: space-evenly;
+                        margin: 0 auto;
+                        width: 90%;
+                        margin-top: 2%;
+                    }
+                    .stepHover{
+                        background-color: #FFFFFF;
+                        color: #00A5A3;
+                        width: 120px;
+                        height: 45px;
+                        font-size: 16px;
+                        border-radius: 8px;
+                        border-color: #00A5A3;
+                        border-width: 3px;
+                        font-weight: bold;
+                        position: relative;
+                    }
+            
         }
     }
 
