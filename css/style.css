@@ -3700,6 +3700,16 @@ input[type="submit"], button {
           transform: scale(1.2, 1.2);
 }
 
+.wrap .postcard_content .rightPostcard .stylePostcard .photoChoose .upPhoto {
+  position: absolute;
+  left: 17%;
+  top: 13%;
+}
+
+.wrap .postcard_content .rightPostcard .stylePostcard #upPhoto1 {
+  margin-bottom: 2%;
+}
+
 .wrap .postcard_content .rightPostcard .stepContent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4418,3 +4428,4 @@ input[type="submit"], button {
 .section1 {
   padding-top: 140px;
 }
+/*# sourceMappingURL=style.css.map */

@@ -145,7 +145,14 @@
                     transition: all .3s;
                     transform: scale(1.2,1.2);
                 }
-            }    
+
+            }
+            .photoUpdate1{
+                #upPhoto1{
+                    margin-bottom: 2%;
+                }    
+            }
+
             }
             
 
@@ -154,6 +161,8 @@
                 justify-content: space-evenly;
                 margin: 0 auto;
                 width: 90%;
+                margin-top: 2%;
+            }
                 .stepHover{
                     background-color: #FFFFFF;
                     color: #00A5A3;
