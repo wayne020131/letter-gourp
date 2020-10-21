@@ -3743,8 +3743,27 @@ input[type="submit"], button {
      object-fit: cover;
 }
 
+.wrap .postcard_content .rightPostcard .stylePostcard .posLittlePic {
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 8%;
+}
+
+.wrap .postcard_content .rightPostcard .stylePostcard .posLittlePic img {
+  width: 135px;
+}
+
+.wrap .postcard_content .rightPostcard .stylePostcard .posLittlePic img:hover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
 .wrap .postcard_content .rightPostcard #rightStep3 {
   text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .wrap .postcard_content .rightPostcard .stepContent {
@@ -4861,4 +4880,3 @@ input[type="submit"], button {
 .section1 {
   padding-top: 140px;
 }
-/*# sourceMappingURL=style.css.map */

@@ -182,9 +182,24 @@
                         object-fit: cover;
                     }
                 }
-            }
+                    .posLittlePic{
+                        margin: 0 auto;
+                        width: 100%;
+                        margin-bottom: 8%;
+                        img{
+                            width: 135px;
+                        }
+                        img:hover{
+                            transition: all .3s;
+                            transform: scale(1.1,1.1);
+                        }
+                    }
+ 
+                }
             #rightStep3{
                 text-align: center;
+                margin: 0 auto;
+                margin-top: 20px;
             }
                     .stepContent{
                         display: flex;

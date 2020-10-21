@@ -31,8 +31,7 @@
         let updatePhotoHere =document.getElementById('upPhoto1');  //input的ID
         let postcard1Id = document.getElementById('postcard1Id');
         let postcard2Id = document.getElementById('postcard2Id');
-        
-        
+        let posLittlePicList =  document.querySelectorAll('.posLittlePic');
         
         
         
@@ -50,6 +49,7 @@
         //建立事件玲聽
         previousStep.addEventListener('click',changeStepBack);
         nextStep.addEventListener('click',changeStepNext);
+        updatePhotoHere.addEventListener('change',PhotoPut);   //建立事件聆聽，偵測input發生change事件，執行PhotoPut函數
         for(let i =0; i<paperList.length; i++){
             paperList[i].addEventListener('click',function(){
                 let paperPassId = this.id;
@@ -62,7 +62,13 @@
                 photoChange(photoPassId);
             });
         }
-        updatePhotoHere.addEventListener('change',PhotoPut);   //建立事件聆聽，偵測input發生change事件，執行PhotoPut函數
+        for(let i=0; i<posLittlePicList.length; i++){
+            posLittlePicList[i].addEventListener('click',function(){
+                let posLittlePicId = posLittlePicList[i].getElementsByTagName('img')[0].id;
+                createPic(posLittlePicId);
+            });
+        }
+
         
         //函式區
         function changeStepBack(){
@@ -158,6 +164,17 @@
                 postcard2Id.classList.remove('leftPostcard2');
                 postcard2Id.classList.add('postcard2');
             }
+        }
+        function createPic(littlePicId){
+            let leftPostcardIcon = document.createElement('img');
+            leftPostcardIcon.setAttribute('id',`left${littlePicId}`);
+            leftPostcardIcon.src = `./pic/postcardMaterial/littlePic/${littlePicId}.svg`;
+            leftPostcardIcon.classList.add('leftPostcardIconClass');
+            leftPostcardIcon.style.width = '100px';
+            leftPostcardIcon.style.height = '100px';
+            leftPostcardIcon.style.position = 'absolute';
+            document.getElementById('postcard2Id').appendChild(leftPostcardIcon);
+
         }
     }
     window.addEventListener('load',doFirst);
@@ -291,10 +308,30 @@
                             </label>
                         </div>
                         <div class="stylePostcard" id="rightStep3">
-                            <div class="pictureChoose"></div>
-                            <div class="pictureChoose"></div>
-                            <div class="pictureChoose"></div>
-                            <div class="pictureChoose"></div>
+                            <div class="posLittlePic" >
+                                <img id="LittlePic1" src="./pic/postcardMaterial/littlePic/LittlePic1.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic2" src="./pic/postcardMaterial/littlePic/LittlePic2.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic3" src="./pic/postcardMaterial/littlePic/LittlePic3.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic4" src="./pic/postcardMaterial/littlePic/LittlePic4.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic5" src="./pic/postcardMaterial/littlePic/LittlePic5.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic6" src="./pic/postcardMaterial/littlePic/LittlePic6.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic7" src="./pic/postcardMaterial/littlePic/LittlePic7.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic8" src="./pic/postcardMaterial/littlePic/LittlePic8.svg">
+                            </div>
                         </div>
                         <div class="stylePostcard" id="rightStep4">
                             <div class="pictureChoose">9</div>
