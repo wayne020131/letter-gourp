@@ -32,6 +32,7 @@
         let postcard1Id = document.getElementById('postcard1Id');
         let postcard2Id = document.getElementById('postcard2Id');
         let posLittlePicList =  document.querySelectorAll('.posLittlePic');
+        let littlePicIdCount = 0; 
         
         
         
@@ -68,7 +69,7 @@
                 createPic(posLittlePicId);
             });
         }
-
+        
         
         //函式區
         function changeStepBack(){
@@ -166,15 +167,34 @@
             }
         }
         function createPic(littlePicId){
+            littlePicIdCount+=1;
             let leftPostcardIcon = document.createElement('img');
-            leftPostcardIcon.setAttribute('id',`left${littlePicId}`);
+            leftPostcardIcon.setAttribute('id',`left${littlePicId+littlePicIdCount}`);
             leftPostcardIcon.src = `./pic/postcardMaterial/littlePic/${littlePicId}.svg`;
             leftPostcardIcon.classList.add('leftPostcardIconClass');
             leftPostcardIcon.style.width = '100px';
             leftPostcardIcon.style.height = '100px';
-            leftPostcardIcon.style.position = 'absolute';
+            leftPostcardIcon.style.position = 'relative';
+            leftPostcardIcon.draggable = "true";
             document.getElementById('postcard2Id').appendChild(leftPostcardIcon);
-
+            leftPostcardIconId = leftPostcardIcon.id;
+            document.getElementById(leftPostcardIconId).addEventListener('dragstart', e=>{
+                e.dataTransfer.setData("elm",e.target.innerHTML);
+                e.dataTransfer.setData('X', e.offsetX);
+                e.dataTransfer.setData('Y',e.offsetY);
+            });
+            postcard2Id.addEventListener("dragenter", e=>{
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            postcard2Id.addEventListener("dragover", e => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+            postcard2Id.addEventListener("drop", e=>{
+                e.preventDefault();
+                e.stopPropagation();
+            });
         }
     }
     window.addEventListener('load',doFirst);
@@ -245,19 +265,21 @@
                 
             </div>
             <div class="postcard_content">
-                <div class="postcard " id="postcard1Id">
-                    <div class="pdContentImg">
-                        <img class="postcardLogo" src="./pic/postcardMaterial/LOGO/logoUse.svg">
+                <div id="canv">
+                    <div class="postcard " id="postcard1Id">
+                        <div class="pdContentImg">
+                            <img class="postcardLogo" src="./pic/postcardMaterial/LOGO/logoUse.svg">
+                        </div>
+                        <div class="putPhoto">
+                            <img id="postcardPhotoPut">
+                        </div>
                     </div>
-                    <div class="putPhoto">
-                        <img id="postcardPhotoPut">
+                    <div class="postcard2 " id="postcard2Id">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
                     </div>
-                </div>
-                <div class="postcard2 " id="postcard2Id">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
                 </div>
                 <div class="rightPostcard">
                     <div class="rightPostcard_aside">

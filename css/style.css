@@ -3561,6 +3561,11 @@ input[type="submit"], button {
   margin: 0 auto;
 }
 
+.wrap .postcard_content #canv {
+  width: 840px;
+  height: 560px;
+}
+
 .wrap .postcard_content .postcard {
   display: block;
   margin-right: 15px;
@@ -3570,6 +3575,8 @@ input[type="submit"], button {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+  padding-top: 15px;
+  border-radius: 10px;
 }
 
 .wrap .postcard_content .postcard .pdContentImg {
@@ -3587,7 +3594,6 @@ input[type="submit"], button {
   width: 96%;
   height: 85%;
   margin: 0 auto;
-  margin-top: 2%;
   background-color: #1e1e1e;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3609,7 +3615,7 @@ input[type="submit"], button {
   margin-right: 15px;
   width: 840px;
   height: 560px;
-  position: relative;
+  position: absolute;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../../pic/postcardMaterial/paper/paper1.png");
@@ -3624,6 +3630,7 @@ input[type="submit"], button {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+  border-radius: 10px;
 }
 
 .wrap .postcard_content .rightPostcard {
@@ -3750,7 +3757,7 @@ input[type="submit"], button {
 }
 
 .wrap .postcard_content .rightPostcard .stylePostcard .posLittlePic img {
-  width: 135px;
+  width: 125px;
 }
 
 .wrap .postcard_content .rightPostcard .stylePostcard .posLittlePic img:hover {
@@ -3763,7 +3770,6 @@ input[type="submit"], button {
 .wrap .postcard_content .rightPostcard #rightStep3 {
   text-align: center;
   margin: 0 auto;
-  margin-top: 20px;
 }
 
 .wrap .postcard_content .rightPostcard .stepContent {
