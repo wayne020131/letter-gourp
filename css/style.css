@@ -3621,6 +3621,14 @@ input[type="submit"], button {
   background-image: url("../../pic/postcardMaterial/paper/paper1.png");
 }
 
+.wrap .postcard_content .postcard2 .leftPostcardIconClass {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .wrap .postcard_content .leftPostcard2 {
   display: block;
   margin-right: 15px;

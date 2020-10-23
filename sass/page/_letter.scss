@@ -82,7 +82,13 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-image: url("../../pic/postcardMaterial/paper/paper1.png");
-            
+            .leftPostcardIconClass{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
         .leftPostcard2{
             display: block;
