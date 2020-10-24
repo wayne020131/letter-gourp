@@ -26,7 +26,10 @@
         display: flex;
         width: 100%;
         margin: 0 auto;
-        
+        #canv{
+            width: 840px;
+            height: 560px;
+        }
         .postcard{
             display: block;
             margin-right: 15px;
@@ -36,6 +39,8 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+            padding-top: 15px;
+            border-radius: 10px;
             
             .pdContentImg{
                 width: 15%;
@@ -53,7 +58,6 @@
                 width: 96%;
                 height: 85%;
                 margin: 0 auto;
-                margin-top: 2%;
                 background-color: #1e1e1e;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -74,10 +78,17 @@
             margin-right: 15px;
             width: 840px;
             height: 560px;
-            position: relative;
+            position: absolute;
             background-size: cover;
             background-repeat: no-repeat;
             background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+            .leftPostcardIconClass{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
         .leftPostcard2{
             display: block;
@@ -88,6 +99,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-image: url("../../pic/postcardMaterial/paper/paper1.png");
+            border-radius: 10px;
         }
         .rightPostcard{
             width: 287px;
@@ -182,9 +194,23 @@
                         object-fit: cover;
                     }
                 }
-            }
+                    .posLittlePic{
+                        margin: 0 auto;
+                        width: 100%;
+                        margin-bottom: 8%;
+                        img{
+                            width: 125px;
+                        }
+                        img:hover{
+                            transition: all .3s;
+                            transform: scale(1.1,1.1);
+                        }
+                    }
+ 
+                }
             #rightStep3{
                 text-align: center;
+                margin: 0 auto;
             }
                     .stepContent{
                         display: flex;

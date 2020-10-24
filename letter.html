@@ -31,9 +31,9 @@
         let updatePhotoHere =document.getElementById('upPhoto1');  //input的ID
         let postcard1Id = document.getElementById('postcard1Id');
         let postcard2Id = document.getElementById('postcard2Id');
-        
-        
-        
+        let posLittlePicList =  document.querySelectorAll('.posLittlePic');
+        let littlePicIdCount = 0; 
+        let dragArray = [];
         
         
         //預設內容
@@ -50,6 +50,7 @@
         //建立事件玲聽
         previousStep.addEventListener('click',changeStepBack);
         nextStep.addEventListener('click',changeStepNext);
+        updatePhotoHere.addEventListener('change',PhotoPut);   //建立事件聆聽，偵測input發生change事件，執行PhotoPut函數
         for(let i =0; i<paperList.length; i++){
             paperList[i].addEventListener('click',function(){
                 let paperPassId = this.id;
@@ -62,7 +63,13 @@
                 photoChange(photoPassId);
             });
         }
-        updatePhotoHere.addEventListener('change',PhotoPut);   //建立事件聆聽，偵測input發生change事件，執行PhotoPut函數
+        for(let i=0; i<posLittlePicList.length; i++){
+            posLittlePicList[i].addEventListener('click',function(){
+                let posLittlePicId = posLittlePicList[i].getElementsByTagName('img')[0].id;
+                createPic(posLittlePicId);
+            });
+        }
+
         
         //函式區
         function changeStepBack(){
@@ -159,6 +166,42 @@
                 postcard2Id.classList.add('postcard2');
             }
         }
+        function createPic(littlePicId){
+            littlePicIdCount+=1;
+            let leftPostcardIcon = document.createElement('img');
+            leftPostcardIcon.setAttribute('id',`left${littlePicId+littlePicIdCount}`);
+            leftPostcardIcon.src = `./pic/postcardMaterial/littlePic/${littlePicId}.svg`;
+            leftPostcardIcon.classList.add('leftPostcardIconClass');
+            leftPostcardIcon.style.width = "100px";
+            leftPostcardIcon.style.height = '100px';
+            leftPostcardIcon.style.position = 'absolute';
+            leftPostcardIcon.draggable = "true";
+
+            document.getElementById('postcard2Id').appendChild(leftPostcardIcon);
+            leftPostcardIconId = leftPostcardIcon.id;
+            dragArray.push(leftPostcardIconId);   //陣列測試
+            document.getElementById(leftPostcardIconId).addEventListener('dragstart', e=>{
+                let imgStyle =  window.getComputedStyle(e.target);
+                e.dataTransfer.setData("image/SVG",
+                (parseInt(imgStyle.getPropertyValue('left')) - e.clientX) + ',' + (parseInt(imgStyle.getPropertyValue('top'))-e.clientY));
+                
+            });
+            postcard2Id.addEventListener("dragover", e => {
+                e.preventDefault();
+            });
+            postcard2Id.addEventListener("drop", e=>{
+                let offset = e.dataTransfer.getData("image/SVG").split(',');
+                console.log(this.id);
+                document.getElementById(leftPostcardIconId).style.left = (e.clientX + parseInt(offset[0])) + 'px';
+                document.getElementById(leftPostcardIconId).style.top = (e.clientY + parseInt(offset[1])) + 'px';
+                e.preventDefault();
+            });
+        }
+        // function startDrag(e){
+        //     let imgStyle = window.getComputedStyle(e.target);
+        //     e.dataTransfer.setData("image/SVG",
+        //         (parseInt(imgStyle.getPropertyValue('left')) - e.clientX) + ',' + (parseInt(imgStyle.getPropertyValue('top'))-e.clientY));
+        // }
     }
     window.addEventListener('load',doFirst);
 </script>
@@ -228,19 +271,21 @@
                 
             </div>
             <div class="postcard_content">
-                <div class="postcard " id="postcard1Id">
-                    <div class="pdContentImg">
-                        <img class="postcardLogo" src="./pic/postcardMaterial/LOGO/logoUse.svg">
+                <div id="canv">
+                    <div class="postcard " id="postcard1Id">
+                        <div class="pdContentImg">
+                            <img class="postcardLogo" src="./pic/postcardMaterial/LOGO/logoUse.svg">
+                        </div>
+                        <div class="putPhoto">
+                            <img id="postcardPhotoPut">
+                        </div>
                     </div>
-                    <div class="putPhoto">
-                        <img id="postcardPhotoPut">
+                    <div class="postcard2 " id="postcard2Id">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
                     </div>
-                </div>
-                <div class="postcard2 " id="postcard2Id">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
                 </div>
                 <div class="rightPostcard">
                     <div class="rightPostcard_aside">
@@ -291,10 +336,30 @@
                             </label>
                         </div>
                         <div class="stylePostcard" id="rightStep3">
-                            <div class="pictureChoose"></div>
-                            <div class="pictureChoose"></div>
-                            <div class="pictureChoose"></div>
-                            <div class="pictureChoose"></div>
+                            <div class="posLittlePic" >
+                                <img id="LittlePic1" src="./pic/postcardMaterial/littlePic/LittlePic1.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic2" src="./pic/postcardMaterial/littlePic/LittlePic2.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic3" src="./pic/postcardMaterial/littlePic/LittlePic3.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic4" src="./pic/postcardMaterial/littlePic/LittlePic4.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic5" src="./pic/postcardMaterial/littlePic/LittlePic5.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic6" src="./pic/postcardMaterial/littlePic/LittlePic6.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic7" src="./pic/postcardMaterial/littlePic/LittlePic7.svg">
+                            </div>
+                            <div class="posLittlePic">
+                                <img id="LittlePic8" src="./pic/postcardMaterial/littlePic/LittlePic8.svg">
+                            </div>
                         </div>
                         <div class="stylePostcard" id="rightStep4">
                             <div class="pictureChoose">9</div>
