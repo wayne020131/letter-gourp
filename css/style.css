@@ -3780,6 +3780,10 @@ input[type="submit"], button {
   margin: 0 auto;
 }
 
+.wrap .postcard_content .rightPostcard #rightStep3 #postcardArray {
+  display: none;
+}
+
 .wrap .postcard_content .rightPostcard .stepContent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4894,3 +4898,4 @@ input[type="submit"], button {
 .section1 {
   padding-top: 140px;
 }
+/*# sourceMappingURL=style.css.map */

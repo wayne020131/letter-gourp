@@ -69,6 +69,23 @@
                 createPic(posLittlePicId);
             });
         }
+        for(let i = 0; i<dragArray.length;i++){
+            document.getElementById(`${dragArray[i]}`).addEventListener('dragstart',e=>{
+                let imgStyle =  window.getComputedStyle(e.target);
+                e.dataTransfer.setData("image/SVG",
+                (parseInt(imgStyle.getPropertyValue('left')) - e.clientX) + ',' + (parseInt(imgStyle.getPropertyValue('top'))-e.clientY));
+                
+            });
+            postcard2Id.addEventListener("dragover", e => {
+                e.preventDefault();
+            });
+            postcard2Id.addEventListener("drop", e=>{
+                let offset = e.dataTransfer.getData("image/SVG").split(',');
+                document.getElementById(`${dragArray[i]}`).style.left = (e.clientX + parseInt(offset[0])) + 'px';
+                document.getElementById(`${dragArray[i]}`).style.top = (e.clientY + parseInt(offset[1])) + 'px';
+                e.preventDefault();
+            });
+        }
 
         
         //函式區
@@ -180,10 +197,12 @@
             document.getElementById('postcard2Id').appendChild(leftPostcardIcon);
             leftPostcardIconId = leftPostcardIcon.id;
             dragArray.push(leftPostcardIconId);   //陣列測試
-            document.getElementById(leftPostcardIconId).addEventListener('dragstart', e=>{
-                let imgStyle =  window.getComputedStyle(e.target);
+            document.getElementById('postcardArray').value = dragArray;
+            for(let i = 0; i<dragArray.length;i++){
+            console.log(dragArray[i]);
+            document.getElementById(`${dragArray[i]}`).addEventListener('dragstart',e=>{
                 e.dataTransfer.setData("image/SVG",
-                (parseInt(imgStyle.getPropertyValue('left')) - e.clientX) + ',' + (parseInt(imgStyle.getPropertyValue('top'))-e.clientY));
+                (parseInt( window.getComputedStyle(e.target).getPropertyValue('left')) - e.clientX) + ',' + (parseInt( window.getComputedStyle(e.target).getPropertyValue('top'))-e.clientY));
                 
             });
             postcard2Id.addEventListener("dragover", e => {
@@ -191,17 +210,12 @@
             });
             postcard2Id.addEventListener("drop", e=>{
                 let offset = e.dataTransfer.getData("image/SVG").split(',');
-                console.log(this.id);
-                document.getElementById(leftPostcardIconId).style.left = (e.clientX + parseInt(offset[0])) + 'px';
-                document.getElementById(leftPostcardIconId).style.top = (e.clientY + parseInt(offset[1])) + 'px';
+                document.getElementById(`${dragArray[i]}`).style.left = (e.clientX + parseInt(offset[0])) + 'px';
+                document.getElementById(`${dragArray[i]}`).style.top = (e.clientY + parseInt(offset[1])) + 'px';
                 e.preventDefault();
             });
         }
-        // function startDrag(e){
-        //     let imgStyle = window.getComputedStyle(e.target);
-        //     e.dataTransfer.setData("image/SVG",
-        //         (parseInt(imgStyle.getPropertyValue('left')) - e.clientX) + ',' + (parseInt(imgStyle.getPropertyValue('top'))-e.clientY));
-        // }
+        }
     }
     window.addEventListener('load',doFirst);
 </script>
@@ -336,6 +350,7 @@
                             </label>
                         </div>
                         <div class="stylePostcard" id="rightStep3">
+                            <input type="text" id="postcardArray" value="">
                             <div class="posLittlePic" >
                                 <img id="LittlePic1" src="./pic/postcardMaterial/littlePic/LittlePic1.svg">
                             </div>
